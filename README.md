@@ -3,9 +3,6 @@
   <a href="https://arxiv.org/abs/2603.09411">
     <img alt="arXiv" src="https://img.shields.io/badge/arXiv-2603.09411-red">
   </a>
-  <a href="./2603.09411v1.pdf">
-    <img alt="paper" src="https://img.shields.io/badge/PDF-local-blue">
-  </a>
 </p>
 
 <p align="center">
