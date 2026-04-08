@@ -63,10 +63,31 @@
 <img width="1820" height="470" alt="screenshot-20260327-181717" src="https://github.com/user-attachments/assets/1ab0da78-748f-4f85-81e8-f124160eedae" />
 
 
-🪧 Announcement
+Announcement
 ---
 The code will be open-sourced after we complete the intellectual property process with our collaborators. Please stay tuned.
 
 🚀 Updates
 ---
 - [x] **\[2025.03.10\]** Release paper on [arxiv](https://arxiv.org/abs/2603.09411).
+
+## Citation
+If you use `RiO-DETR` or its methods in your work, please cite the following BibTeX entries:
+<details open>
+<summary> bibtex </summary>
+
+```latex
+@article{hu2026rio,
+  title={RiO-DETR: DETR for Real-time Oriented Object Detection},
+  author={Hu, Zhangchi and Zhao, Yifan and Peng, Yansong and Sun, Wenzhang and Yin, Xiangchen and Chen, Jie and Wu, Peixi and Li, Hebei and Wang, Xinghao and Jiang, Dongsheng and others},
+  journal={arXiv preprint arXiv:2603.09411},
+  year={2026}
+}
+```
+</details>
+
+## Acknowledgement
+Our work is built upon [RT-DETRv4](https://github.com/RT-DETRs/RT-DETRv4).
+Thanks to the inspirations from [RT-DETRv4](https://github.com/RT-DETRs/RT-DETRv4), [D-FINE](https://github.com/Peterande/D-FINE), [DEIMv2](https://github.com/Intellindust-AI-Lab/DEIMv2), and [RHINO](https://github.com/SIAnalytics/RHINO).
+
+✨ Feel free to contribute and reach out if you have any questions! ✨
