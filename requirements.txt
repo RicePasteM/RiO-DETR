@@ -1,0 +1,12 @@
+# torch==2.2.2
+# torchvision==0.17.2
+faster-coco-eval>=1.6.5
+PyYAML
+tensorboard
+scipy
+calflops
+transformers
+timm>=1.0.27
+# metrics handled by engine/data/dataset/mmeval.py
+numba>=0.65.1
+pycocotools==2.0.11

@@ -1,0 +1,41 @@
+task: detection
+
+evaluator:
+  type: DotaEvaluator
+  iou_types: ['mAP']
+
+num_classes: 37
+remap_mscoco_category: False
+
+train_dataloader:
+  type: DataLoader
+  dataset:
+    type: FAIR1MDataset
+    img_folder: /path/to/FAIR1M-2.0/fair1m_split/train/images
+    ann_folder: /path/to/FAIR1M-2.0/fair1m_split/train/annfiles
+    return_masks: False
+    transforms:
+      type: Compose
+      ops: ~
+  shuffle: True
+  num_workers: 4
+  drop_last: True
+  collate_fn:
+    type: BatchImageCollateFunction
+
+
+val_dataloader:
+  type: DataLoader
+  dataset:
+    type: FAIR1MDataset
+    img_folder: /path/to/FAIR1M-2.0/fair1m_split/validation/images
+    ann_folder: /path/to/FAIR1M-2.0/fair1m_split/validation/annfiles
+    return_masks: False
+    transforms:
+      type: Compose
+      ops: ~
+  shuffle: False
+  num_workers: 4
+  drop_last: False
+  collate_fn:
+    type: BatchImageCollateFunction

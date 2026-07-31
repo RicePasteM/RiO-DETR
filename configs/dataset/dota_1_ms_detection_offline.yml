@@ -1,0 +1,42 @@
+task: detection
+
+evaluator:
+  type: DotaAutoEvaluatorOffline
+  merge_patches: True
+  iou_types: ['mAP']
+
+num_classes: 15
+remap_mscoco_category: False
+
+train_dataloader:
+  type: DataLoader
+  dataset:
+    type: DOTADataset
+    img_folder: /path/to/DOTA-v1.0/split_ms_dota/trainval/images
+    ann_folder: /path/to/DOTA-v1.0/split_ms_dota/trainval/annfiles
+    return_masks: False
+    transforms:
+      type: Compose
+      ops: ~
+  shuffle: True
+  num_workers: 4
+  drop_last: True
+  collate_fn:
+    type: BatchImageCollateFunction
+
+
+val_dataloader:
+  type: DataLoader
+  dataset:
+    type: DOTADataset
+    img_folder: /path/to/DOTA-v1.0/split_ms_dota/test/images
+    ann_folder: /path/to/DOTA-v1.0/split_ms_dota/test/annfiles
+    return_masks: False
+    transforms:
+      type: Compose
+      ops: ~
+  shuffle: False
+  num_workers: 4
+  drop_last: False
+  collate_fn:
+    type: BatchImageCollateFunction

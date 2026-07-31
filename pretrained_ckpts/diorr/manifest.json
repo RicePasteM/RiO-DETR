@@ -1,0 +1,77 @@
+{
+  "dataset": "DIOR-R",
+  "weight_format": {
+    "model": "EMA state_dict"
+  },
+  "selection_rule": "solver-generated global-best validation checkpoint",
+  "models": [
+    {
+      "variant": "S",
+      "config": "configs/rtdetrv2_obb/rtdetrv2_obb_hgnetv2_s_diorr.yml",
+      "source_checkpoint": "best_stg2.pth",
+      "checkpoint_last_epoch": 126,
+      "best_metric_epoch": 126,
+      "best_mAP": 0.737518111988902,
+      "parameters": 8152768,
+      "state_dict_tensors": 636,
+      "file": "rtdetrv2_obb_hgnetv2_s_diorr.pth",
+      "size_bytes": 33172282,
+      "sha256": "b37c73b8030c1ef784e8f35ca9fab3285e3e60ba6c6035057ea38257ffee01f1",
+      "metrics_log": "logs/rtdetrv2_obb_hgnetv2_s_diorr.jsonl",
+      "logged_epochs": 131,
+      "missing_logged_epochs": [
+        34
+      ]
+    },
+    {
+      "variant": "M",
+      "config": "configs/rtdetrv2_obb/rtdetrv2_obb_hgnetv2_m_diorr.yml",
+      "source_checkpoint": "best_stg2.pth",
+      "checkpoint_last_epoch": 95,
+      "best_metric_epoch": 96,
+      "best_mAP": 0.7561158086046238,
+      "parameters": 19070534,
+      "state_dict_tensors": 810,
+      "file": "rtdetrv2_obb_hgnetv2_m_diorr.pth",
+      "size_bytes": 77014180,
+      "sha256": "2a6384fe713679e4c3269d5176e8549c773fdfa87bb818da782e79b2b372d362",
+      "metrics_log": "logs/rtdetrv2_obb_hgnetv2_m_diorr.jsonl",
+      "logged_epochs": 101,
+      "missing_logged_epochs": [
+        24
+      ]
+    },
+    {
+      "variant": "L",
+      "config": "configs/rtdetrv2_obb/rtdetrv2_obb_hgnetv2_l_diorr.yml",
+      "source_checkpoint": "best_stg2.pth",
+      "checkpoint_last_epoch": 56,
+      "best_metric_epoch": 63,
+      "best_mAP": 0.7568783304273066,
+      "parameters": 27960541,
+      "state_dict_tensors": 879,
+      "file": "rtdetrv2_obb_hgnetv2_l_diorr.pth",
+      "size_bytes": 112683971,
+      "sha256": "3a403d589585403091a6b154a32499d7ccf6e3196c7ac8b91e9bf1c182457125",
+      "metrics_log": "logs/rtdetrv2_obb_hgnetv2_l_diorr.jsonl",
+      "logged_epochs": 72,
+      "missing_logged_epochs": []
+    },
+    {
+      "variant": "X",
+      "config": "configs/rtdetrv2_obb/rtdetrv2_obb_hgnetv2_x_diorr.yml",
+      "source_checkpoint": "best_stg1.pth",
+      "checkpoint_last_epoch": 58,
+      "best_metric_epoch": 58,
+      "best_mAP": 0.7651793275748126,
+      "parameters": 63585085,
+      "state_dict_tensors": 1179,
+      "file": "rtdetrv2_obb_hgnetv2_x_diorr.pth",
+      "size_bytes": 255542330,
+      "sha256": "67ef7436857489460b6abd9cce984c723dfe4f183f62ad0e43ba49136b2711e8",
+      "metrics_log": "logs/rtdetrv2_obb_hgnetv2_x_diorr.jsonl",
+      "logged_epochs": 72,
+      "missing_logged_epochs": []
+    }
+  ]
+}
