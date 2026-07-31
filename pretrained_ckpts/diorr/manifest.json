@@ -6,6 +6,22 @@
   "selection_rule": "solver-generated global-best validation checkpoint",
   "models": [
     {
+      "variant": "N",
+      "config": "configs/rtdetrv2_obb/rtdetrv2_obb_hgnetv2_n_diorr.yml",
+      "source_checkpoint": "best_stg2.pth",
+      "checkpoint_last_epoch": 163,
+      "best_metric_epoch": 172,
+      "best_mAP": 0.6273968249559403,
+      "parameters": 3974056,
+      "state_dict_tensors": 576,
+      "file": "rtdetrv2_obb_hgnetv2_n_diorr.pth",
+      "size_bytes": 16227426,
+      "sha256": "6d00665413e48d60bc942defb7c12204b3d080cfd08b9a7b407dc4d80e80f0fc",
+      "metrics_log": "logs/rtdetrv2_obb_hgnetv2_n_diorr.jsonl",
+      "logged_epochs": 200,
+      "missing_logged_epochs": []
+    },
+    {
       "variant": "S",
       "config": "configs/rtdetrv2_obb/rtdetrv2_obb_hgnetv2_s_diorr.yml",
       "source_checkpoint": "best_stg2.pth",

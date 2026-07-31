@@ -103,6 +103,7 @@ We are excited to share that **RiO-DETRv2 is already under development** and wil
 
 | Model | mAP | Params | Config | Log | Checkpoint |
 | --- | ---: | ---: | --- | --- | --- |
+| RT-DETRv2-OBB-N | 62.74 | 3.97M | [yml](configs/rtdetrv2_obb/rtdetrv2_obb_hgnetv2_n_diorr.yml) | [log](pretrained_ckpts/diorr/logs/rtdetrv2_obb_hgnetv2_n_diorr.jsonl) | [ckpt](https://huggingface.co/RicePasteM/RT-DETR-OBB/resolve/main/diorr/rtdetrv2_obb_hgnetv2_n_diorr.pth) |
 | RT-DETRv2-OBB-S | 73.75 | 8.15M | [yml](configs/rtdetrv2_obb/rtdetrv2_obb_hgnetv2_s_diorr.yml) | [log](pretrained_ckpts/diorr/logs/rtdetrv2_obb_hgnetv2_s_diorr.jsonl) | [ckpt](https://huggingface.co/RicePasteM/RT-DETR-OBB/resolve/main/diorr/rtdetrv2_obb_hgnetv2_s_diorr.pth) |
 | RT-DETRv2-OBB-M | 75.61 | 19.07M | [yml](configs/rtdetrv2_obb/rtdetrv2_obb_hgnetv2_m_diorr.yml) | [log](pretrained_ckpts/diorr/logs/rtdetrv2_obb_hgnetv2_m_diorr.jsonl) | [ckpt](https://huggingface.co/RicePasteM/RT-DETR-OBB/resolve/main/diorr/rtdetrv2_obb_hgnetv2_m_diorr.pth) |
 | RT-DETRv2-OBB-L | 75.69 | 27.96M | [yml](configs/rtdetrv2_obb/rtdetrv2_obb_hgnetv2_l_diorr.yml) | [log](pretrained_ckpts/diorr/logs/rtdetrv2_obb_hgnetv2_l_diorr.jsonl) | [ckpt](https://huggingface.co/RicePasteM/RT-DETR-OBB/resolve/main/diorr/rtdetrv2_obb_hgnetv2_l_diorr.pth) |
