@@ -1,0 +1,25 @@
+print_freq: 100
+output_dir: './logs'
+checkpoint_freq: 10
+
+
+sync_bn: True
+find_unused_parameters: False
+
+
+use_amp: False
+scaler:
+  type: GradScaler
+  enabled: True
+
+
+use_ema: False
+ema:
+  type: ModelEMA
+  decay: 0.9999
+  warmups: 1000
+# SwanLab experiment tracking
+# use_swanlab: True
+# swanlab_project: RT-DETRv2-OBB
+# swanlab_workspace: your-workspace
+# swanlab_experiment: experiment-name

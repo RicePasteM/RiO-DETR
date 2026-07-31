@@ -1,0 +1,128 @@
+__include__: [
+  '../dataset/dota_1_ss_detection_offline.yml',
+  '../runtime.yml',
+  '../base/dataloader.yml',
+  '../base/rtv2_optimizer.yml',
+  '../base/rtv2_r50vd.yml',
+]
+
+output_dir: ./outputs/rtdetrv2_obb_hgnetv2_m_dota_1_ss
+
+eval_spatial_size: [1024, 1024]
+
+RTv4:
+  backbone: HGNetv2
+  decoder: RTDETRTransformerv2OBB
+
+HGNetv2:
+  name: 'B2'
+  return_idx: [1, 2, 3]
+  freeze_at: -1
+  freeze_norm: False
+  use_lab: True
+  pretrained: True
+  local_model_dir: ./pretrain/hgnetv2/
+
+criterion: RTv4OBBCriterion
+
+postprocessor: PostProcessorOBB
+
+PostProcessorOBB:
+  num_top_queries: 300
+  input_shape: [1024, 1024]
+
+HybridEncoder:
+  in_channels: [384, 768, 1536]
+  version: rt_detrv2
+  expansion: 1
+  depth_mult: 0.67
+
+RTDETRTransformerv2OBB:
+  feat_channels: [256, 256, 256]
+  feat_strides: [8, 16, 32]
+  hidden_dim: 256
+  num_levels: 3
+  num_layers: 3
+  num_queries: 300
+  num_denoising: 100
+  label_noise_ratio: 0.5
+  box_noise_scale: 1.0
+  learn_query_content: False
+  eval_idx: -1
+  num_points: [4, 4, 4]
+  cross_attn_method: default
+  query_select_method: default
+  query_pos_method: default
+  anchor_aspect_ratio: 1.0
+
+RTv4OBBCriterion:
+  weight_dict: {loss_focal: 1, loss_l1: 5, loss_kld: 5}
+  losses: ['focal', 'l1', 'kld']
+  alpha: 0.75
+  gamma: 2.0
+  use_uni_set: True
+  matcher:
+    type: HungarianMatcherOBB
+    weight_dict: {cost_class: 2, cost_bbox: 0, cost_hausdorff: 5, cost_giou: 5}
+    alpha: 0.25
+    gamma: 2.0
+
+epoches: 132
+
+lrsheduler: flatcosine
+warmup_iter: -1
+flat_epoch: 41
+no_aug_epoch: 12
+
+optimizer:
+  type: AdamW
+  params:
+    -
+      params: '^(?=.*backbone)(?=.*norm|bn).*$'
+      lr: 0.00001
+      weight_decay: 0.
+    -
+      params: '^(?=.*(?:encoder|decoder))(?=.*(?:norm|bn)).*$'
+      weight_decay: 0.
+  lr: 0.0001
+  betas: [0.9, 0.999]
+  weight_decay: 0.0001
+
+lr_warmup_scheduler: ~
+train_dataloader:
+  total_batch_size: 16
+  dataset:
+    transforms:
+      ops:
+        - {type: MosaicOBB, output_size: 1024, rotation_range: 0, translation_range: [0.1, 0.1], scaling_range: [0.5, 1.5],
+           probability: 1.0, fill_value: 0, use_cache: False, max_cached_images: 50, random_pop: True}
+        - {type: RandomPhotometricDistort, p: 0.5}
+        - {type: SanitizeBoundingBoxesOBB, min_size: 1}
+        - {type: RandomZoomOutOBB, fill: 0}
+        - {type: RandomIoUCropOBB, p: 0.8}
+        - {type: RandomHorizontalFlipOBB}
+        - {type: ResizeOBB, size: [1024, 1024], }
+        - {type: SanitizeBoundingBoxesOBB, min_size: 1}
+        - {type: ConvertPILImage, dtype: 'float32', scale: True}
+        - {type: ConvertOBB, normalize: True}
+      policy:
+        epoch: [4, 70, 90]
+        ops: ['MosaicOBB', 'RandomPhotometricDistort', 'RandomZoomOutOBB', 'RandomIoUCropOBB']
+      mosaic_prob: 0.5
+
+  collate_fn:
+    base_size: 1024
+    base_size_repeat: ~
+    mixup_prob: 0.5
+    mixup_epochs: [4, 70]
+    stop_epoch: 70
+    ema_restart_decay: 0.9999
+
+val_dataloader:
+  dataset:
+    transforms:
+      ops:
+        - {type: ResizeOBB, size: [1024, 1024], keep_ratio: True, pad_to_size: True, fill: 0}
+        - {type: SanitizeBoundingBoxesOBB, min_size: 1.0}
+        - {type: ConvertPILImage, dtype: 'float32', scale: True}
+        - {type: ConvertOBB, normalize: True}
