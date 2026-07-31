@@ -222,6 +222,7 @@ wandb/
 
 # Local logs
 *.log
+!training_logs/**/*.log
 
 # Keep published metric histories while ignoring local log directories.
 !pretrained_ckpts/
