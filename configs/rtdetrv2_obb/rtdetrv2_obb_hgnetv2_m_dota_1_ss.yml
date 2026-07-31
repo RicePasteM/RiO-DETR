@@ -68,6 +68,7 @@ RTv4OBBCriterion:
     gamma: 2.0
 
 epoches: 132
+checkpoint_freq: 2
 
 lrsheduler: flatcosine
 warmup_iter: -1

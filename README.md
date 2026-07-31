@@ -90,11 +90,11 @@ We are excited to share that **RiO-DETRv2 is already under development** and wil
 
 🚀 Updates
 ---
-- [x] **\[2025.07.31\]** We have released a clean implementation of the core **RT-DETR-OBB** framework, along with a selection of pretrained weights. More pretrained weights will be uploaded in the next few days.
+- [x] **\[2026.07.31\]** We have released a clean implementation of the core **RT-DETR-OBB** framework, along with a selection of pretrained weights. More pretrained weights will be uploaded in the next few days.
 
-- [x] **\[2025.06.20\]** 🎉 RiO-DETR has been accepted to ECCV 2026!
+- [x] **\[2026.06.20\]** 🎉 RiO-DETR has been accepted to ECCV 2026!
 
-- [x] **\[2025.03.10\]** Release paper on [arxiv](https://arxiv.org/abs/2603.09411).
+- [x] **\[2026.03.10\]** Release paper on [arxiv](https://arxiv.org/abs/2603.09411).
 
 
 ## Model Zoo
@@ -107,6 +107,19 @@ We are excited to share that **RiO-DETRv2 is already under development** and wil
 | RT-DETRv2-OBB-M | 75.61 | 19.07M | [yml](configs/rtdetrv2_obb/rtdetrv2_obb_hgnetv2_m_diorr.yml) | [log](pretrained_ckpts/diorr/logs/rtdetrv2_obb_hgnetv2_m_diorr.jsonl) | [ckpt](https://huggingface.co/RicePasteM/RT-DETR-OBB/resolve/main/diorr/rtdetrv2_obb_hgnetv2_m_diorr.pth) |
 | RT-DETRv2-OBB-L | 75.69 | 27.96M | [yml](configs/rtdetrv2_obb/rtdetrv2_obb_hgnetv2_l_diorr.yml) | [log](pretrained_ckpts/diorr/logs/rtdetrv2_obb_hgnetv2_l_diorr.jsonl) | [ckpt](https://huggingface.co/RicePasteM/RT-DETR-OBB/resolve/main/diorr/rtdetrv2_obb_hgnetv2_l_diorr.pth) |
 | RT-DETRv2-OBB-X | 76.52 | 63.59M | [yml](configs/rtdetrv2_obb/rtdetrv2_obb_hgnetv2_x_diorr.yml) | [log](pretrained_ckpts/diorr/logs/rtdetrv2_obb_hgnetv2_x_diorr.jsonl) | [ckpt](https://huggingface.co/RicePasteM/RT-DETR-OBB/resolve/main/diorr/rtdetrv2_obb_hgnetv2_x_diorr.pth) |
+
+### Original RiO-DETR Training and Evaluation Logs
+
+For reference, we provide the console logs from the original RiO-DETR
+experiments. DOTA-v1.0 SS entries also include HTML evaluation reports.
+Machine-specific storage paths, user names, host names, and network addresses
+have been redacted from the published logs.
+
+| Dataset | N | S | M | L | X |
+| --- | --- | --- | --- | --- | --- |
+| DIOR-R | [log](training_logs/original_rio_detr/diorr/rio_hgnetv2_n_diorr.log) | [log](training_logs/original_rio_detr/diorr/rio_hgnetv2_s_diorr.log) | [log](training_logs/original_rio_detr/diorr/rio_hgnetv2_m_diorr.log) | [log](training_logs/original_rio_detr/diorr/rio_hgnetv2_l_diorr.log) | [log](training_logs/original_rio_detr/diorr/rio_hgnetv2_x_diorr.log) |
+| DOTA-v1.0 SS | [train](training_logs/original_rio_detr/dota_1_ss/rio_hgnetv2_n_dota_1_ss.log) · [eval](training_logs/original_rio_detr/dota_1_ss/rio_n_dota_ss.html) | [train](training_logs/original_rio_detr/dota_1_ss/rio_hgnetv2_s_dota_1_ss.log) · [eval](training_logs/original_rio_detr/dota_1_ss/rio_s_dota_ss.html) | [train](training_logs/original_rio_detr/dota_1_ss/rio_hgnetv2_m_dota_1_ss.log) · [eval](training_logs/original_rio_detr/dota_1_ss/rio_m_dota_ss.html) | [train](training_logs/original_rio_detr/dota_1_ss/rio_hgnetv2_l_dota_1_ss.log) · [eval](training_logs/original_rio_detr/dota_1_ss/rio_l_dota_ss.html) | [train](training_logs/original_rio_detr/dota_1_ss/rio_hgnetv2_x_dota_1_ss.log) · [eval](training_logs/original_rio_detr/dota_1_ss/rio_x_dota_ss.html) |
+| FAIR1M-2.0 MS | — | — | [log](training_logs/original_rio_detr/fair1m_2_ms/rio_hgnetv2_m_fair1m_2_ms.log) | — | [log](training_logs/original_rio_detr/fair1m_2_ms/rio_hgnetv2_x_fair1m_2_ms.log) |
 
 
 ## Getting Started
@@ -222,11 +235,6 @@ Update the `/path/to/FAIR1M-2.0/...` placeholders in
 `configs/dataset/fair1m_2_ms_detection.yml`. The FAIR1M configurations use
 the labeled validation split for local mAP evaluation.
 
-## Model Zoo
-
-
-
-
 ## Usage
 
 ### Available Configurations
@@ -307,6 +315,34 @@ bash test.sh /path/to/checkpoint.pth \
 For DOTA-v1.0, the offline evaluator stores merged submission archives under
 `<output_dir>/dota_results/`. DIOR-R and FAIR1M-2.0 report local mAP when
 ground-truth annotations are available.
+
+### TensorRT FP16 Latency Benchmark
+
+`tools/deployment/benchmark_tensorrt_latency.py` reproduces the latency
+measurement used for RiO-DETR on Tesla T4. It uses GPU-resident input/output
+buffers and CUDA events, so the reported latency covers TensorRT execution
+only; preprocessing, host/device copies, NMS, and host-side postprocessing are
+excluded.
+
+Install the deployment dependencies and benchmark one or more TensorRT 10
+engines. Repeat `--engine` to compare multiple model variants:
+
+```bash
+pip install -r tools/benchmark/requirements.txt
+
+CUDA_VISIBLE_DEVICES=0 python tools/deployment/benchmark_tensorrt_latency.py \
+  --engine RT-DETRv2-OBB-S=/path/to/model_s_fp16.engine \
+  --engine RT-DETRv2-OBB-M=/path/to/model_m_fp16.engine \
+  --require-fp16-io \
+  --warmup 100 \
+  --runs 300 \
+  --trials 5 \
+  --json-out outputs/tensorrt_latency.json
+```
+
+Use `--cuda-graph` to benchmark CUDA Graph replay. The optional
+`--require-fp16-io` check rejects engines whose floating-point bindings are
+not FP16.
 
 ## Citation
 If you use `RiO-DETR` or its methods in your work, please cite the following BibTeX entries:
