@@ -219,13 +219,8 @@ wandb/
 *.pt
 *.ckpt
 *.onnx
+*.safetensors
 
 # Local logs
 *.log
 !training_logs/**/*.log
-
-# Keep published metric histories while ignoring local log directories.
-!pretrained_ckpts/
-!pretrained_ckpts/**/
-!pretrained_ckpts/**/logs/
-!pretrained_ckpts/**/logs/*.jsonl

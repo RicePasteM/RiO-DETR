@@ -103,11 +103,28 @@ We are excited to share that **RiO-DETRv2 is already under development** and wil
 
 | Model | mAP | Params | Config | Log | Checkpoint |
 | --- | ---: | ---: | --- | --- | --- |
-| RT-DETRv2-OBB-N | 62.74 | 3.97M | [yml](configs/rtdetrv2_obb/rtdetrv2_obb_hgnetv2_n_diorr.yml) | [log](pretrained_ckpts/diorr/logs/rtdetrv2_obb_hgnetv2_n_diorr.jsonl) | [ckpt](https://huggingface.co/RicePasteM/RT-DETR-OBB/resolve/main/diorr/rtdetrv2_obb_hgnetv2_n_diorr.pth) |
-| RT-DETRv2-OBB-S | 73.75 | 8.15M | [yml](configs/rtdetrv2_obb/rtdetrv2_obb_hgnetv2_s_diorr.yml) | [log](pretrained_ckpts/diorr/logs/rtdetrv2_obb_hgnetv2_s_diorr.jsonl) | [ckpt](https://huggingface.co/RicePasteM/RT-DETR-OBB/resolve/main/diorr/rtdetrv2_obb_hgnetv2_s_diorr.pth) |
-| RT-DETRv2-OBB-M | 75.61 | 19.07M | [yml](configs/rtdetrv2_obb/rtdetrv2_obb_hgnetv2_m_diorr.yml) | [log](pretrained_ckpts/diorr/logs/rtdetrv2_obb_hgnetv2_m_diorr.jsonl) | [ckpt](https://huggingface.co/RicePasteM/RT-DETR-OBB/resolve/main/diorr/rtdetrv2_obb_hgnetv2_m_diorr.pth) |
-| RT-DETRv2-OBB-L | 75.69 | 27.96M | [yml](configs/rtdetrv2_obb/rtdetrv2_obb_hgnetv2_l_diorr.yml) | [log](pretrained_ckpts/diorr/logs/rtdetrv2_obb_hgnetv2_l_diorr.jsonl) | [ckpt](https://huggingface.co/RicePasteM/RT-DETR-OBB/resolve/main/diorr/rtdetrv2_obb_hgnetv2_l_diorr.pth) |
-| RT-DETRv2-OBB-X | 76.52 | 63.59M | [yml](configs/rtdetrv2_obb/rtdetrv2_obb_hgnetv2_x_diorr.yml) | [log](pretrained_ckpts/diorr/logs/rtdetrv2_obb_hgnetv2_x_diorr.jsonl) | [ckpt](https://huggingface.co/RicePasteM/RT-DETR-OBB/resolve/main/diorr/rtdetrv2_obb_hgnetv2_x_diorr.pth) |
+| RT-DETRv2-OBB-N | 62.74 | 3.97M | [yml](configs/rtdetrv2_obb/rtdetrv2_obb_hgnetv2_n_diorr.yml) | [metrics](training_logs/rtdetrv2_obb/diorr/metrics/rtdetrv2_obb_hgnetv2_n_diorr.jsonl) | [ckpt](https://huggingface.co/RicePasteM/RT-DETR-OBB/resolve/main/diorr/rtdetrv2_obb_hgnetv2_n_diorr.pth) |
+| RT-DETRv2-OBB-S | 73.75 | 8.15M | [yml](configs/rtdetrv2_obb/rtdetrv2_obb_hgnetv2_s_diorr.yml) | [metrics](training_logs/rtdetrv2_obb/diorr/metrics/rtdetrv2_obb_hgnetv2_s_diorr.jsonl) | [ckpt](https://huggingface.co/RicePasteM/RT-DETR-OBB/resolve/main/diorr/rtdetrv2_obb_hgnetv2_s_diorr.pth) |
+| RT-DETRv2-OBB-M | 75.61 | 19.07M | [yml](configs/rtdetrv2_obb/rtdetrv2_obb_hgnetv2_m_diorr.yml) | [metrics](training_logs/rtdetrv2_obb/diorr/metrics/rtdetrv2_obb_hgnetv2_m_diorr.jsonl) | [ckpt](https://huggingface.co/RicePasteM/RT-DETR-OBB/resolve/main/diorr/rtdetrv2_obb_hgnetv2_m_diorr.pth) |
+| RT-DETRv2-OBB-L | 75.69 | 27.96M | [yml](configs/rtdetrv2_obb/rtdetrv2_obb_hgnetv2_l_diorr.yml) | [metrics](training_logs/rtdetrv2_obb/diorr/metrics/rtdetrv2_obb_hgnetv2_l_diorr.jsonl) | [ckpt](https://huggingface.co/RicePasteM/RT-DETR-OBB/resolve/main/diorr/rtdetrv2_obb_hgnetv2_l_diorr.pth) |
+| RT-DETRv2-OBB-X | 76.52 | 63.59M | [yml](configs/rtdetrv2_obb/rtdetrv2_obb_hgnetv2_x_diorr.yml) | [metrics](training_logs/rtdetrv2_obb/diorr/metrics/rtdetrv2_obb_hgnetv2_x_diorr.jsonl) | [ckpt](https://huggingface.co/RicePasteM/RT-DETR-OBB/resolve/main/diorr/rtdetrv2_obb_hgnetv2_x_diorr.pth) |
+
+Release metadata: [manifest](model_zoo/rtdetrv2_obb/diorr/manifest.json) · [metrics](model_zoo/rtdetrv2_obb/diorr/metrics.csv).
+
+### DOTA-v1.0 Single-Scale
+
+The released checkpoints are selected by the highest completed VOC mAP
+(AP50) in the odd-epoch evaluation reports exported on 2026-08-02. AP75 and
+COCO mAP below are reported for the same selected epoch.
+
+| Model | Epoch | AP50 | AP75 | COCO mAP | Params | Config | Logs | Checkpoint |
+| --- | ---: | ---: | ---: | ---: | ---: | --- | --- | --- |
+| RT-DETRv2-OBB-S | 139 | 78.12 | 51.36 | 48.63 | 8.15M | [yml](configs/rtdetrv2_obb/rtdetrv2_obb_hgnetv2_s_dota_1_ss.yml) | [train](training_logs/rtdetrv2_obb/dota_1_ss/train/rtdetrv2_obb_hgnetv2_s_dota_1_ss.log) · [eval](training_logs/rtdetrv2_obb/dota_1_ss/eval/rtdetrv2_obb_hgnetv2_s_dota_1_ss_eval.html) | [ckpt](https://huggingface.co/RicePasteM/RT-DETR-OBB/resolve/main/dota_1_ss/rtdetrv2_obb_hgnetv2_s_dota_1_ss.pth) |
+| RT-DETRv2-OBB-M | 101 | 80.12 | 54.21 | 50.57 | 19.06M | [yml](configs/rtdetrv2_obb/rtdetrv2_obb_hgnetv2_m_dota_1_ss.yml) | [train](training_logs/rtdetrv2_obb/dota_1_ss/train/rtdetrv2_obb_hgnetv2_m_dota_1_ss.log) · [eval](training_logs/rtdetrv2_obb/dota_1_ss/eval/rtdetrv2_obb_hgnetv2_m_dota_1_ss_eval.html) | [ckpt](https://huggingface.co/RicePasteM/RT-DETR-OBB/resolve/main/dota_1_ss/rtdetrv2_obb_hgnetv2_m_dota_1_ss.pth) |
+| RT-DETRv2-OBB-L | 93 | 80.48 | 54.97 | 51.18 | 27.95M | [yml](configs/rtdetrv2_obb/rtdetrv2_obb_hgnetv2_l_dota_1_ss.yml) | [train](training_logs/rtdetrv2_obb/dota_1_ss/train/rtdetrv2_obb_hgnetv2_l_dota_1_ss.log) · [eval](training_logs/rtdetrv2_obb/dota_1_ss/eval/rtdetrv2_obb_hgnetv2_l_dota_1_ss_eval.html) | [ckpt](https://huggingface.co/RicePasteM/RT-DETR-OBB/resolve/main/dota_1_ss/rtdetrv2_obb_hgnetv2_l_dota_1_ss.pth) |
+| RT-DETRv2-OBB-X | 65 | 80.63 | 56.73 | 51.85 | 63.57M | [yml](configs/rtdetrv2_obb/rtdetrv2_obb_hgnetv2_x_dota_1_ss.yml) | [train](training_logs/rtdetrv2_obb/dota_1_ss/train/rtdetrv2_obb_hgnetv2_x_dota_1_ss.log) · [eval](training_logs/rtdetrv2_obb/dota_1_ss/eval/rtdetrv2_obb_hgnetv2_x_dota_1_ss_eval.html) | [ckpt](https://huggingface.co/RicePasteM/RT-DETR-OBB/resolve/main/dota_1_ss/rtdetrv2_obb_hgnetv2_x_dota_1_ss.pth) |
+
+Release metadata: [manifest](model_zoo/rtdetrv2_obb/dota_1_ss/manifest.json) · [metrics](model_zoo/rtdetrv2_obb/dota_1_ss/metrics.csv).
 
 ### Original RiO-DETR Training and Evaluation Logs
 
