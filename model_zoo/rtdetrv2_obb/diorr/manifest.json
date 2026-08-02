@@ -1,9 +1,14 @@
 {
+  "schema_version": 1,
+  "model_family": "RT-DETRv2-OBB",
   "dataset": "DIOR-R",
+  "dataset_key": "diorr",
+  "artifact_host": "RicePasteM/RT-DETR-OBB",
   "weight_format": {
     "model": "EMA state_dict"
   },
   "selection_rule": "solver-generated global-best validation checkpoint",
+  "metrics_table": "model_zoo/rtdetrv2_obb/diorr/metrics.csv",
   "models": [
     {
       "variant": "N",
@@ -17,9 +22,11 @@
       "file": "rtdetrv2_obb_hgnetv2_n_diorr.pth",
       "size_bytes": 16227426,
       "sha256": "6d00665413e48d60bc942defb7c12204b3d080cfd08b9a7b407dc4d80e80f0fc",
-      "metrics_log": "logs/rtdetrv2_obb_hgnetv2_n_diorr.jsonl",
+      "metrics_log": "training_logs/rtdetrv2_obb/diorr/metrics/rtdetrv2_obb_hgnetv2_n_diorr.jsonl",
       "logged_epochs": 200,
-      "missing_logged_epochs": []
+      "missing_logged_epochs": [],
+      "local_cache_path": "pretrained_ckpts/rtdetrv2_obb/diorr/rtdetrv2_obb_hgnetv2_n_diorr.pth",
+      "download_url": "https://huggingface.co/RicePasteM/RT-DETR-OBB/resolve/main/diorr/rtdetrv2_obb_hgnetv2_n_diorr.pth"
     },
     {
       "variant": "S",
@@ -33,11 +40,13 @@
       "file": "rtdetrv2_obb_hgnetv2_s_diorr.pth",
       "size_bytes": 33172282,
       "sha256": "b37c73b8030c1ef784e8f35ca9fab3285e3e60ba6c6035057ea38257ffee01f1",
-      "metrics_log": "logs/rtdetrv2_obb_hgnetv2_s_diorr.jsonl",
+      "metrics_log": "training_logs/rtdetrv2_obb/diorr/metrics/rtdetrv2_obb_hgnetv2_s_diorr.jsonl",
       "logged_epochs": 131,
       "missing_logged_epochs": [
         34
-      ]
+      ],
+      "local_cache_path": "pretrained_ckpts/rtdetrv2_obb/diorr/rtdetrv2_obb_hgnetv2_s_diorr.pth",
+      "download_url": "https://huggingface.co/RicePasteM/RT-DETR-OBB/resolve/main/diorr/rtdetrv2_obb_hgnetv2_s_diorr.pth"
     },
     {
       "variant": "M",
@@ -51,11 +60,13 @@
       "file": "rtdetrv2_obb_hgnetv2_m_diorr.pth",
       "size_bytes": 77014180,
       "sha256": "2a6384fe713679e4c3269d5176e8549c773fdfa87bb818da782e79b2b372d362",
-      "metrics_log": "logs/rtdetrv2_obb_hgnetv2_m_diorr.jsonl",
+      "metrics_log": "training_logs/rtdetrv2_obb/diorr/metrics/rtdetrv2_obb_hgnetv2_m_diorr.jsonl",
       "logged_epochs": 101,
       "missing_logged_epochs": [
         24
-      ]
+      ],
+      "local_cache_path": "pretrained_ckpts/rtdetrv2_obb/diorr/rtdetrv2_obb_hgnetv2_m_diorr.pth",
+      "download_url": "https://huggingface.co/RicePasteM/RT-DETR-OBB/resolve/main/diorr/rtdetrv2_obb_hgnetv2_m_diorr.pth"
     },
     {
       "variant": "L",
@@ -69,9 +80,11 @@
       "file": "rtdetrv2_obb_hgnetv2_l_diorr.pth",
       "size_bytes": 112683971,
       "sha256": "3a403d589585403091a6b154a32499d7ccf6e3196c7ac8b91e9bf1c182457125",
-      "metrics_log": "logs/rtdetrv2_obb_hgnetv2_l_diorr.jsonl",
+      "metrics_log": "training_logs/rtdetrv2_obb/diorr/metrics/rtdetrv2_obb_hgnetv2_l_diorr.jsonl",
       "logged_epochs": 72,
-      "missing_logged_epochs": []
+      "missing_logged_epochs": [],
+      "local_cache_path": "pretrained_ckpts/rtdetrv2_obb/diorr/rtdetrv2_obb_hgnetv2_l_diorr.pth",
+      "download_url": "https://huggingface.co/RicePasteM/RT-DETR-OBB/resolve/main/diorr/rtdetrv2_obb_hgnetv2_l_diorr.pth"
     },
     {
       "variant": "X",
@@ -85,9 +98,11 @@
       "file": "rtdetrv2_obb_hgnetv2_x_diorr.pth",
       "size_bytes": 255542330,
       "sha256": "67ef7436857489460b6abd9cce984c723dfe4f183f62ad0e43ba49136b2711e8",
-      "metrics_log": "logs/rtdetrv2_obb_hgnetv2_x_diorr.jsonl",
+      "metrics_log": "training_logs/rtdetrv2_obb/diorr/metrics/rtdetrv2_obb_hgnetv2_x_diorr.jsonl",
       "logged_epochs": 72,
-      "missing_logged_epochs": []
+      "missing_logged_epochs": [],
+      "local_cache_path": "pretrained_ckpts/rtdetrv2_obb/diorr/rtdetrv2_obb_hgnetv2_x_diorr.pth",
+      "download_url": "https://huggingface.co/RicePasteM/RT-DETR-OBB/resolve/main/diorr/rtdetrv2_obb_hgnetv2_x_diorr.pth"
     }
   ]
 }
