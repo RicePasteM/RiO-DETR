@@ -8,9 +8,29 @@
     "model": "EMA state_dict"
   },
   "selection_rule": "highest completed VOC mAP (AP50) among submitted odd epochs",
-  "evaluation_exported_at": "2026-08-02",
+  "evaluation_exported_at": "2026-08-03",
   "metrics_table": "model_zoo/rtdetrv2_obb/dota_1_ss/metrics.csv",
   "models": [
+    {
+      "variant": "N",
+      "best_metric_epoch": 159,
+      "best_voc_mAP": 0.698188974630965,
+      "ap50": 0.698188974630965,
+      "ap75": 0.3526750405029293,
+      "coco_mAP": 0.3807866582645552,
+      "parameters": 3970836,
+      "state_dict_tensors": 576,
+      "size_bytes": 16251702,
+      "sha256": "b87de5d18f7abfa0ea83aaa27e5f7a4d6545553c6ee559afbff9ac95a7d41006",
+      "evaluation_task_id": 517,
+      "config": "configs/rtdetrv2_obb/rtdetrv2_obb_hgnetv2_n_dota_1_ss.yml",
+      "source_checkpoint": "checkpoint0159.pth",
+      "file": "rtdetrv2_obb_hgnetv2_n_dota_1_ss.pth",
+      "local_cache_path": "pretrained_ckpts/rtdetrv2_obb/dota_1_ss/rtdetrv2_obb_hgnetv2_n_dota_1_ss.pth",
+      "download_url": "https://huggingface.co/RicePasteM/RT-DETR-OBB/resolve/main/dota_1_ss/rtdetrv2_obb_hgnetv2_n_dota_1_ss.pth",
+      "train_log": "training_logs/rtdetrv2_obb/dota_1_ss/train/rtdetrv2_obb_hgnetv2_n_dota_1_ss.log",
+      "eval_report": "training_logs/rtdetrv2_obb/dota_1_ss/eval/rtdetrv2_obb_hgnetv2_n_dota_1_ss_eval.html"
+    },
     {
       "variant": "S",
       "best_metric_epoch": 139,
