@@ -6,7 +6,10 @@ Experiment records are grouped first by dataset and then by artifact type:
 training_logs/rtdetrv2_obb/
 ├── diorr/
 │   └── metrics/   # compact per-epoch JSONL metric histories
-└── dota_1_ss/
+├── dota_1_ss/
+│   ├── train/     # sanitized console training logs
+│   └── eval/      # exported DOTA evaluation HTML reports
+└── dota_1_ms/
     ├── train/     # sanitized console training logs
     └── eval/      # exported DOTA evaluation HTML reports
 ```

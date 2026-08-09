@@ -127,6 +127,18 @@ and COCO mAP below are reported for the same selected epoch.
 
 Release metadata: [manifest](model_zoo/rtdetrv2_obb/dota_1_ss/manifest.json) · [metrics](model_zoo/rtdetrv2_obb/dota_1_ss/metrics.csv).
 
+### DOTA-v1.0 Multi-Scale
+
+The released checkpoint is selected by the highest completed VOC mAP (AP50)
+among the submitted odd-epoch evaluations through 2026-08-09. AP75 and COCO
+mAP below are reported for the same selected epoch.
+
+| Model | Epoch | AP50 | AP75 | COCO mAP | Params | Config | Logs | Checkpoint |
+| --- | ---: | ---: | ---: | ---: | ---: | --- | --- | --- |
+| RT-DETRv2-OBB-X | 33 | 80.72 | 54.61 | 50.86 | 63.57M | [yml](configs/rtdetrv2_obb/rtdetrv2_obb_hgnetv2_x_dota_1_ms.yml) | [train](training_logs/rtdetrv2_obb/dota_1_ms/train/rtdetrv2_obb_hgnetv2_x_dota_1_ms.log) · [eval](training_logs/rtdetrv2_obb/dota_1_ms/eval/rtdetrv2_obb_hgnetv2_x_dota_1_ms_eval.html) | [ckpt](https://huggingface.co/RicePasteM/RT-DETR-OBB/resolve/main/dota_1_ms/rtdetrv2_obb_hgnetv2_x_dota_1_ms.pth) |
+
+Release metadata: [manifest](model_zoo/rtdetrv2_obb/dota_1_ms/manifest.json) · [metrics](model_zoo/rtdetrv2_obb/dota_1_ms/metrics.csv).
+
 ### Original RiO-DETR Training and Evaluation Logs
 
 For reference, we provide the console logs from the original RiO-DETR
