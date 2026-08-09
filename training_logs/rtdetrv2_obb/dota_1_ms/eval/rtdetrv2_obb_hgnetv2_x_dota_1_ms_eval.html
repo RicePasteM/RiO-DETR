@@ -1,0 +1,3255 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>训练任务详情 - rtdetrv2_obb_hgnetv2_x_dota_1_ms_20260805</title>
+  <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; padding: 20px; background: #f5f7fa; color: #333; }
+    .container { max-width: 1200px; margin: 0 auto; }
+    h1 { margin-bottom: 20px; color: #303133; }
+    h2 { margin: 30px 0 15px; color: #303133; font-size: 18px; }
+    h3 { margin: 20px 0 10px; color: #606266; font-size: 16px; }
+    h4 { margin: 15px 0 10px; color: #606266; font-size: 14px; }
+    .card { background: #fff; border-radius: 8px; padding: 20px; margin-bottom: 20px; box-shadow: 0 2px 12px rgba(0,0,0,0.1); }
+    .header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+    .header h1 { margin-bottom: 0; }
+    .status-tag { display: inline-block; padding: 4px 12px; border-radius: 4px; font-size: 14px; }
+    .status-success { background: #f0f9eb; color: #67c23a; border: 1px solid #e1f3d8; }
+    .status-warning { background: #fdf6ec; color: #e6a23c; border: 1px solid #faecd8; }
+    .status-danger { background: #fef0f0; color: #f56c6c; border: 1px solid #fde2e2; }
+    .status-info { background: #f4f4f5; color: #909399; border: 1px solid #e9e9eb; }
+    table { width: 100%; border-collapse: collapse; margin: 15px 0; }
+    th, td { padding: 12px; text-align: left; border-bottom: 1px solid #ebeef5; }
+    th { background: #f5f7fa; color: #606266; font-weight: 600; }
+    tr:hover { background: #fafafa; }
+    .descriptions { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; }
+    .descriptions .item { padding: 10px; }
+    .descriptions .label { color: #909399; font-size: 14px; margin-bottom: 5px; }
+    .descriptions .value { color: #303133; font-size: 14px; }
+    .chart-row { display: flex; flex-wrap: wrap; gap: 20px; margin: 15px 0; }
+    .chart-container { flex: 1; min-width: 300px; }
+    .view-class-btn { background: #409eff; color: #fff; border: none; padding: 10px 20px; border-radius: 4px; cursor: pointer; font-size: 14px; margin-top: 10px; }
+    .view-class-btn:hover { background: #66b1ff; }
+    .dialog-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 1000; display: flex; justify-content: center; align-items: center; }
+    .dialog-content { background: #fff; border-radius: 8px; width: 90%; max-width: 1200px; max-height: 90vh; overflow: auto; }
+    .dialog-header { display: flex; justify-content: space-between; align-items: center; padding: 20px; border-bottom: 1px solid #ebeef5; }
+    .dialog-header h3 { margin: 0; }
+    .close-btn { background: none; border: none; font-size: 24px; cursor: pointer; color: #909399; }
+    .dialog-body { padding: 20px; }
+    .class-charts-row { display: flex; flex-wrap: wrap; gap: 20px; }
+    .toggle-btn { background: #409eff; color: #fff; border: none; padding: 4px 8px; border-radius: 4px; cursor: pointer; font-size: 12px; }
+    .toggle-btn:hover { background: #66b1ff; }
+    .class-ap-row { background: #f9f9f9; }
+    .result-detail { padding: 15px; }
+    .result-detail h4 { margin: 0 0 10px; color: #409eff; }
+    .detail-table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+    .detail-table th, .detail-table td { padding: 8px; text-align: left; border-bottom: 1px solid #ebeef5; }
+    .detail-table th { background: #f5f7fa; color: #606266; }
+    .ap-bar { width: 100px; height: 16px; background: #e4e7ed; border-radius: 3px; overflow: hidden; }
+    .ap-bar-fill { height: 100%; background: #409eff; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="card">
+      <div class="header">
+        <h1>训练任务详情</h1>
+        <span class="status-tag status-info">active</span>
+      </div>
+
+      <h2>基本信息</h2>
+      <div class="descriptions">
+        <div class="item">
+          <div class="label">任务ID</div>
+          <div class="value">518</div>
+        </div>
+        <div class="item">
+          <div class="label">任务名称</div>
+          <div class="value">rtdetrv2_obb_hgnetv2_x_dota_1_ms_20260805</div>
+        </div>
+        <div class="item">
+          <div class="label">创建时间</div>
+          <div class="value">2026/8/8 23:17:12</div>
+        </div>
+        <div class="item">
+          <div class="label">服务器</div>
+          <div class="value">DOTA_1_0_Task1</div>
+        </div>
+
+        <div class="item">
+          <div class="label">API密钥ID</div>
+          <div class="value">3</div>
+        </div>
+
+        <div class="item" style="grid-column: span 2;">
+          <div class="label">描述</div>
+          <div class="value">RT-DETRv2-OBB baseline HGNetV2-X on DOTA-v1.0 multi-scale; submit odd epochs 1-47 available as of 2026-08-08.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>训练结果列表</h2>
+      <table>
+        <thead>
+          <tr>
+            <th></th>
+            <th>ID</th>
+            <th>Epoch</th>
+            <th>状态</th>
+            <th>VOC mAP</th>
+            <th>COCO AP50</th>
+            <th>COCO AP75</th>
+            <th>COCO mAP</th>
+            <th>提交时间</th>
+            <th>完成时间</th>
+          </tr>
+        </thead>
+        <tbody>
+
+      <tr>
+        <td>5773</td>
+        <td>
+          <button class="toggle-btn" onclick="toggleDetail(0)">📋</button>
+        </td>
+        <td>1</td>
+        <td><span class="status-success">已完成</span></td>
+        <td>0.6891</td>
+        <td>0.6891</td>
+        <td>0.3712</td>
+        <td>0.3810</td>
+        <td>2026/8/8 23:17:48</td>
+        <td>2026/8/8 23:26:09</td>
+      </tr>
+
+      <tr class="class-ap-row">
+        <td colspan="10">
+          <div class="result-detail" id="detail-0" style="display: none;">
+            <h4>Epoch 1 各类别AP值</h4>
+            <table class="detail-table">
+              <thead>
+                <tr><th>类别</th><th>AP</th><th>可视化</th></tr>
+              </thead>
+              <tbody>
+
+                  <tr>
+                    <td>plane</td>
+                    <td>0.7501</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 75.0140428794843%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>baseball-diamond</td>
+                    <td>0.7341</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 73.41440327026521%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>bridge</td>
+                    <td>0.4347</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 43.46616836492525%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>ground-track-field</td>
+                    <td>0.5774</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 57.73761256692501%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>small-vehicle</td>
+                    <td>0.7757</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 77.57023220097233%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>large-vehicle</td>
+                    <td>0.8279</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 82.79158555719256%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>ship</td>
+                    <td>0.8753</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 87.52534896118712%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>tennis-court</td>
+                    <td>0.8971</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 89.71120417771532%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>basketball-court</td>
+                    <td>0.7823</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 78.2276413001986%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>storage-tank</td>
+                    <td>0.8612</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 86.11757740517336%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>soccer-ball-field</td>
+                    <td>0.4579</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 45.79493444931494%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>roundabout</td>
+                    <td>0.6110</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 61.10311132157524%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>harbor</td>
+                    <td>0.5794</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 57.940928724069586%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>swimming-pool</td>
+                    <td>0.6543</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 65.42742786745845%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>helicopter</td>
+                    <td>0.5174</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 51.740665357153894%"></div></div></td>
+                  </tr>
+
+              </tbody>
+            </table>
+          </div>
+        </td>
+      </tr>
+
+
+      <tr>
+        <td>5774</td>
+        <td>
+          <button class="toggle-btn" onclick="toggleDetail(1)">📋</button>
+        </td>
+        <td>3</td>
+        <td><span class="status-success">已完成</span></td>
+        <td>0.7192</td>
+        <td>0.7192</td>
+        <td>0.4100</td>
+        <td>0.4120</td>
+        <td>2026/8/8 23:17:56</td>
+        <td>2026/8/8 23:32:14</td>
+      </tr>
+
+      <tr class="class-ap-row">
+        <td colspan="10">
+          <div class="result-detail" id="detail-1" style="display: none;">
+            <h4>Epoch 3 各类别AP值</h4>
+            <table class="detail-table">
+              <thead>
+                <tr><th>类别</th><th>AP</th><th>可视化</th></tr>
+              </thead>
+              <tbody>
+
+                  <tr>
+                    <td>plane</td>
+                    <td>0.7566</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 75.66198345404172%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>baseball-diamond</td>
+                    <td>0.7462</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 74.62365088746932%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>bridge</td>
+                    <td>0.4715</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 47.149148479771505%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>ground-track-field</td>
+                    <td>0.5970</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 59.70282774120024%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>small-vehicle</td>
+                    <td>0.7961</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 79.61298611844782%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>large-vehicle</td>
+                    <td>0.8476</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 84.76136576943023%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>ship</td>
+                    <td>0.8779</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 87.78640331227476%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>tennis-court</td>
+                    <td>0.9011</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 90.11440272600804%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>basketball-court</td>
+                    <td>0.8443</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 84.42705390340629%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>storage-tank</td>
+                    <td>0.8710</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 87.09974198845501%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>soccer-ball-field</td>
+                    <td>0.5979</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 59.78992615512292%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>roundabout</td>
+                    <td>0.6047</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 60.47398689810406%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>harbor</td>
+                    <td>0.6420</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 64.19685454948568%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>swimming-pool</td>
+                    <td>0.6825</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 68.25257755290593%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>helicopter</td>
+                    <td>0.5509</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 55.08908191679451%"></div></div></td>
+                  </tr>
+
+              </tbody>
+            </table>
+          </div>
+        </td>
+      </tr>
+
+
+      <tr>
+        <td>5775</td>
+        <td>
+          <button class="toggle-btn" onclick="toggleDetail(2)">📋</button>
+        </td>
+        <td>5</td>
+        <td><span class="status-success">已完成</span></td>
+        <td>0.7379</td>
+        <td>0.7379</td>
+        <td>0.4328</td>
+        <td>0.4314</td>
+        <td>2026/8/8 23:18:04</td>
+        <td>2026/8/8 23:38:18</td>
+      </tr>
+
+      <tr class="class-ap-row">
+        <td colspan="10">
+          <div class="result-detail" id="detail-2" style="display: none;">
+            <h4>Epoch 5 各类别AP值</h4>
+            <table class="detail-table">
+              <thead>
+                <tr><th>类别</th><th>AP</th><th>可视化</th></tr>
+              </thead>
+              <tbody>
+
+                  <tr>
+                    <td>plane</td>
+                    <td>0.7640</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 76.4030077006905%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>baseball-diamond</td>
+                    <td>0.8159</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 81.59294063883284%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>bridge</td>
+                    <td>0.5142</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 51.42427964222449%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>ground-track-field</td>
+                    <td>0.6331</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 63.30828702355708%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>small-vehicle</td>
+                    <td>0.7996</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 79.9578437476679%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>large-vehicle</td>
+                    <td>0.8528</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 85.27941094529542%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>ship</td>
+                    <td>0.8820</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 88.199495936155%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>tennis-court</td>
+                    <td>0.9012</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 90.11700818136403%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>basketball-court</td>
+                    <td>0.8469</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 84.6938772983836%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>storage-tank</td>
+                    <td>0.8722</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 87.21982277222564%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>soccer-ball-field</td>
+                    <td>0.6567</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 65.67043160439334%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>roundabout</td>
+                    <td>0.6060</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 60.59648055533287%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>harbor</td>
+                    <td>0.6626</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 66.2566043958168%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>swimming-pool</td>
+                    <td>0.7011</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 70.10504317728673%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>helicopter</td>
+                    <td>0.5601</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 56.014186460433926%"></div></div></td>
+                  </tr>
+
+              </tbody>
+            </table>
+          </div>
+        </td>
+      </tr>
+
+
+      <tr>
+        <td>5776</td>
+        <td>
+          <button class="toggle-btn" onclick="toggleDetail(3)">📋</button>
+        </td>
+        <td>7</td>
+        <td><span class="status-success">已完成</span></td>
+        <td>0.7479</td>
+        <td>0.7479</td>
+        <td>0.4519</td>
+        <td>0.4447</td>
+        <td>2026/8/8 23:18:12</td>
+        <td>2026/8/9 01:48:30</td>
+      </tr>
+
+      <tr class="class-ap-row">
+        <td colspan="10">
+          <div class="result-detail" id="detail-3" style="display: none;">
+            <h4>Epoch 7 各类别AP值</h4>
+            <table class="detail-table">
+              <thead>
+                <tr><th>类别</th><th>AP</th><th>可视化</th></tr>
+              </thead>
+              <tbody>
+
+                  <tr>
+                    <td>plane</td>
+                    <td>0.7761</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 77.60933151705312%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>baseball-diamond</td>
+                    <td>0.8415</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 84.14631073512228%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>bridge</td>
+                    <td>0.5390</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 53.90027918312792%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>ground-track-field</td>
+                    <td>0.6868</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 68.68302719394484%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>small-vehicle</td>
+                    <td>0.7990</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 79.89876718543567%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>large-vehicle</td>
+                    <td>0.8580</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 85.80320390790291%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>ship</td>
+                    <td>0.8818</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 88.18194017564973%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>tennis-court</td>
+                    <td>0.9043</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 90.42846479359993%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>basketball-court</td>
+                    <td>0.8473</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 84.73292142026028%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>storage-tank</td>
+                    <td>0.8755</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 87.54725757487279%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>soccer-ball-field</td>
+                    <td>0.6686</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 66.86380072018369%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>roundabout</td>
+                    <td>0.6097</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 60.966365116060274%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>harbor</td>
+                    <td>0.7272</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 72.71760524201838%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>swimming-pool</td>
+                    <td>0.7283</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 72.82696198948292%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>helicopter</td>
+                    <td>0.4751</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 47.51195099350986%"></div></div></td>
+                  </tr>
+
+              </tbody>
+            </table>
+          </div>
+        </td>
+      </tr>
+
+
+      <tr>
+        <td>5777</td>
+        <td>
+          <button class="toggle-btn" onclick="toggleDetail(4)">📋</button>
+        </td>
+        <td>9</td>
+        <td><span class="status-success">已完成</span></td>
+        <td>0.7658</td>
+        <td>0.7658</td>
+        <td>0.4756</td>
+        <td>0.4594</td>
+        <td>2026/8/8 23:18:21</td>
+        <td>2026/8/9 01:54:29</td>
+      </tr>
+
+      <tr class="class-ap-row">
+        <td colspan="10">
+          <div class="result-detail" id="detail-4" style="display: none;">
+            <h4>Epoch 9 各类别AP值</h4>
+            <table class="detail-table">
+              <thead>
+                <tr><th>类别</th><th>AP</th><th>可视化</th></tr>
+              </thead>
+              <tbody>
+
+                  <tr>
+                    <td>plane</td>
+                    <td>0.7874</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 78.74105022795635%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>baseball-diamond</td>
+                    <td>0.8604</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 86.04176719571399%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>bridge</td>
+                    <td>0.5556</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 55.5594618115755%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>ground-track-field</td>
+                    <td>0.7298</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 72.97739105450826%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>small-vehicle</td>
+                    <td>0.8025</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 80.25137149904101%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>large-vehicle</td>
+                    <td>0.8609</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 86.09219666843835%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>ship</td>
+                    <td>0.8823</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 88.2268821358202%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>tennis-court</td>
+                    <td>0.9072</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 90.71820246625941%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>basketball-court</td>
+                    <td>0.8546</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 85.4597200486986%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>storage-tank</td>
+                    <td>0.8756</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 87.55659012086039%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>soccer-ball-field</td>
+                    <td>0.6830</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 68.29750235492484%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>roundabout</td>
+                    <td>0.6315</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 63.15319873389759%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>harbor</td>
+                    <td>0.7463</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 74.62956889857256%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>swimming-pool</td>
+                    <td>0.7837</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 78.3693162084732%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>helicopter</td>
+                    <td>0.5265</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 52.64720916150154%"></div></div></td>
+                  </tr>
+
+              </tbody>
+            </table>
+          </div>
+        </td>
+      </tr>
+
+
+      <tr>
+        <td>5778</td>
+        <td>
+          <button class="toggle-btn" onclick="toggleDetail(5)">📋</button>
+        </td>
+        <td>11</td>
+        <td><span class="status-success">已完成</span></td>
+        <td>0.7710</td>
+        <td>0.7710</td>
+        <td>0.4835</td>
+        <td>0.4691</td>
+        <td>2026/8/8 23:18:28</td>
+        <td>2026/8/9 02:19:27</td>
+      </tr>
+
+      <tr class="class-ap-row">
+        <td colspan="10">
+          <div class="result-detail" id="detail-5" style="display: none;">
+            <h4>Epoch 11 各类别AP值</h4>
+            <table class="detail-table">
+              <thead>
+                <tr><th>类别</th><th>AP</th><th>可视化</th></tr>
+              </thead>
+              <tbody>
+
+                  <tr>
+                    <td>plane</td>
+                    <td>0.7864</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 78.64324016884841%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>baseball-diamond</td>
+                    <td>0.8663</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 86.62695279509505%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>bridge</td>
+                    <td>0.5806</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 58.05899003061131%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>ground-track-field</td>
+                    <td>0.7286</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 72.85778059196039%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>small-vehicle</td>
+                    <td>0.8059</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 80.58692404790429%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>large-vehicle</td>
+                    <td>0.8605</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 86.05371256409603%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>ship</td>
+                    <td>0.8820</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 88.20320489064135%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>tennis-court</td>
+                    <td>0.9077</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 90.77173697736659%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>basketball-court</td>
+                    <td>0.8472</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 84.72405353641295%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>storage-tank</td>
+                    <td>0.8788</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 87.88013301593165%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>soccer-ball-field</td>
+                    <td>0.6882</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 68.81800007371139%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>roundabout</td>
+                    <td>0.6415</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 64.14943859828716%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>harbor</td>
+                    <td>0.7574</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 75.74119300557051%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>swimming-pool</td>
+                    <td>0.8070</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 80.70256783971284%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>helicopter</td>
+                    <td>0.5271</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 52.712343510769685%"></div></div></td>
+                  </tr>
+
+              </tbody>
+            </table>
+          </div>
+        </td>
+      </tr>
+
+
+      <tr>
+        <td>5779</td>
+        <td>
+          <button class="toggle-btn" onclick="toggleDetail(6)">📋</button>
+        </td>
+        <td>13</td>
+        <td><span class="status-success">已完成</span></td>
+        <td>0.7808</td>
+        <td>0.7808</td>
+        <td>0.4964</td>
+        <td>0.4777</td>
+        <td>2026/8/8 23:18:36</td>
+        <td>2026/8/9 00:06:40</td>
+      </tr>
+
+      <tr class="class-ap-row">
+        <td colspan="10">
+          <div class="result-detail" id="detail-6" style="display: none;">
+            <h4>Epoch 13 各类别AP值</h4>
+            <table class="detail-table">
+              <thead>
+                <tr><th>类别</th><th>AP</th><th>可视化</th></tr>
+              </thead>
+              <tbody>
+
+                  <tr>
+                    <td>plane</td>
+                    <td>0.7990</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 79.8994713692394%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>baseball-diamond</td>
+                    <td>0.8641</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 86.40508318382119%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>bridge</td>
+                    <td>0.5797</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 57.96548541007412%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>ground-track-field</td>
+                    <td>0.7497</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 74.9706750767437%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>small-vehicle</td>
+                    <td>0.8073</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 80.7271916245199%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>large-vehicle</td>
+                    <td>0.8625</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 86.25366993902489%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>ship</td>
+                    <td>0.8826</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 88.25660941520279%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>tennis-court</td>
+                    <td>0.9078</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 90.78151382606399%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>basketball-court</td>
+                    <td>0.8566</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 85.66495392430988%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>storage-tank</td>
+                    <td>0.8774</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 87.73862300193234%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>soccer-ball-field</td>
+                    <td>0.6589</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 65.89242059951064%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>roundabout</td>
+                    <td>0.6502</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 65.02221945768542%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>harbor</td>
+                    <td>0.7639</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 76.39154636821569%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>swimming-pool</td>
+                    <td>0.8181</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 81.8134896602504%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>helicopter</td>
+                    <td>0.6336</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 63.36431457506549%"></div></div></td>
+                  </tr>
+
+              </tbody>
+            </table>
+          </div>
+        </td>
+      </tr>
+
+
+      <tr>
+        <td>5780</td>
+        <td>
+          <button class="toggle-btn" onclick="toggleDetail(7)">📋</button>
+        </td>
+        <td>15</td>
+        <td><span class="status-success">已完成</span></td>
+        <td>0.7908</td>
+        <td>0.7908</td>
+        <td>0.5095</td>
+        <td>0.4869</td>
+        <td>2026/8/8 23:18:44</td>
+        <td>2026/8/9 00:13:02</td>
+      </tr>
+
+      <tr class="class-ap-row">
+        <td colspan="10">
+          <div class="result-detail" id="detail-7" style="display: none;">
+            <h4>Epoch 15 各类别AP值</h4>
+            <table class="detail-table">
+              <thead>
+                <tr><th>类别</th><th>AP</th><th>可视化</th></tr>
+              </thead>
+              <tbody>
+
+                  <tr>
+                    <td>plane</td>
+                    <td>0.8041</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 80.40702815651011%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>baseball-diamond</td>
+                    <td>0.8629</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 86.28567360580823%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>bridge</td>
+                    <td>0.5817</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 58.17480024383076%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>ground-track-field</td>
+                    <td>0.7640</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 76.39540765028755%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>small-vehicle</td>
+                    <td>0.8059</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 80.58656247371111%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>large-vehicle</td>
+                    <td>0.8629</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 86.28524459209443%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>ship</td>
+                    <td>0.8847</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 88.4676192354057%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>tennis-court</td>
+                    <td>0.9079</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 90.78637381438836%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>basketball-court</td>
+                    <td>0.8620</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 86.19949396724297%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>storage-tank</td>
+                    <td>0.8796</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 87.96420410144906%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>soccer-ball-field</td>
+                    <td>0.7129</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 71.2938648667977%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>roundabout</td>
+                    <td>0.6523</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 65.22864868677388%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>harbor</td>
+                    <td>0.7687</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 76.86542248777018%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>swimming-pool</td>
+                    <td>0.8228</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 82.28192444235137%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>helicopter</td>
+                    <td>0.6902</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 69.0201040015726%"></div></div></td>
+                  </tr>
+
+              </tbody>
+            </table>
+          </div>
+        </td>
+      </tr>
+
+
+      <tr>
+        <td>5781</td>
+        <td>
+          <button class="toggle-btn" onclick="toggleDetail(8)">📋</button>
+        </td>
+        <td>17</td>
+        <td><span class="status-success">已完成</span></td>
+        <td>0.7951</td>
+        <td>0.7951</td>
+        <td>0.5036</td>
+        <td>0.4872</td>
+        <td>2026/8/8 23:18:52</td>
+        <td>2026/8/9 00:19:25</td>
+      </tr>
+
+      <tr class="class-ap-row">
+        <td colspan="10">
+          <div class="result-detail" id="detail-8" style="display: none;">
+            <h4>Epoch 17 各类别AP值</h4>
+            <table class="detail-table">
+              <thead>
+                <tr><th>类别</th><th>AP</th><th>可视化</th></tr>
+              </thead>
+              <tbody>
+
+                  <tr>
+                    <td>plane</td>
+                    <td>0.7910</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 79.09896032305585%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>baseball-diamond</td>
+                    <td>0.8649</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 86.49233745983864%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>bridge</td>
+                    <td>0.5888</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 58.87814212276747%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>ground-track-field</td>
+                    <td>0.7637</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 76.3728979363039%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>small-vehicle</td>
+                    <td>0.8099</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 80.98973272525946%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>large-vehicle</td>
+                    <td>0.8613</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 86.13049688609907%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>ship</td>
+                    <td>0.8876</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 88.76159940017239%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>tennis-court</td>
+                    <td>0.9076</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 90.7625978244344%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>basketball-court</td>
+                    <td>0.8674</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 86.74334380117489%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>storage-tank</td>
+                    <td>0.8797</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 87.97223385580766%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>soccer-ball-field</td>
+                    <td>0.6845</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 68.44972785146669%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>roundabout</td>
+                    <td>0.6955</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 69.54725906025003%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>harbor</td>
+                    <td>0.7722</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 77.21649304992074%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>swimming-pool</td>
+                    <td>0.8238</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 82.3814513248599%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>helicopter</td>
+                    <td>0.7289</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 72.89486166007904%"></div></div></td>
+                  </tr>
+
+              </tbody>
+            </table>
+          </div>
+        </td>
+      </tr>
+
+
+      <tr>
+        <td>5782</td>
+        <td>
+          <button class="toggle-btn" onclick="toggleDetail(9)">📋</button>
+        </td>
+        <td>19</td>
+        <td><span class="status-success">已完成</span></td>
+        <td>0.7955</td>
+        <td>0.7955</td>
+        <td>0.5093</td>
+        <td>0.4876</td>
+        <td>2026/8/8 23:19:01</td>
+        <td>2026/8/9 00:25:48</td>
+      </tr>
+
+      <tr class="class-ap-row">
+        <td colspan="10">
+          <div class="result-detail" id="detail-9" style="display: none;">
+            <h4>Epoch 19 各类别AP值</h4>
+            <table class="detail-table">
+              <thead>
+                <tr><th>类别</th><th>AP</th><th>可视化</th></tr>
+              </thead>
+              <tbody>
+
+                  <tr>
+                    <td>plane</td>
+                    <td>0.7858</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 78.579015125242%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>baseball-diamond</td>
+                    <td>0.8661</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 86.61387204422238%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>bridge</td>
+                    <td>0.5863</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 58.629638384082185%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>ground-track-field</td>
+                    <td>0.7614</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 76.14297129797568%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>small-vehicle</td>
+                    <td>0.8130</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 81.302699631303%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>large-vehicle</td>
+                    <td>0.8613</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 86.12672282767807%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>ship</td>
+                    <td>0.8890</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 88.89698164851669%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>tennis-court</td>
+                    <td>0.9084</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 90.84096625467446%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>basketball-court</td>
+                    <td>0.8712</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 87.12320652350604%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>storage-tank</td>
+                    <td>0.8810</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 88.10139024221478%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>soccer-ball-field</td>
+                    <td>0.6753</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 67.52932440494315%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>roundabout</td>
+                    <td>0.6945</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 69.45075561531344%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>harbor</td>
+                    <td>0.7751</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 77.51325629048831%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>swimming-pool</td>
+                    <td>0.8287</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 82.86751642515728%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>helicopter</td>
+                    <td>0.7353</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 73.52699114908552%"></div></div></td>
+                  </tr>
+
+              </tbody>
+            </table>
+          </div>
+        </td>
+      </tr>
+
+
+      <tr>
+        <td>5783</td>
+        <td>
+          <button class="toggle-btn" onclick="toggleDetail(10)">📋</button>
+        </td>
+        <td>21</td>
+        <td><span class="status-success">已完成</span></td>
+        <td>0.7984</td>
+        <td>0.7984</td>
+        <td>0.5149</td>
+        <td>0.4908</td>
+        <td>2026/8/8 23:19:09</td>
+        <td>2026/8/9 02:06:20</td>
+      </tr>
+
+      <tr class="class-ap-row">
+        <td colspan="10">
+          <div class="result-detail" id="detail-10" style="display: none;">
+            <h4>Epoch 21 各类别AP值</h4>
+            <table class="detail-table">
+              <thead>
+                <tr><th>类别</th><th>AP</th><th>可视化</th></tr>
+              </thead>
+              <tbody>
+
+                  <tr>
+                    <td>plane</td>
+                    <td>0.7849</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 78.49180310941534%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>baseball-diamond</td>
+                    <td>0.8591</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 85.91278801665582%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>bridge</td>
+                    <td>0.5955</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 59.547752877029346%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>ground-track-field</td>
+                    <td>0.7705</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 77.05103819253827%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>small-vehicle</td>
+                    <td>0.8144</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 81.44471357438718%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>large-vehicle</td>
+                    <td>0.8602</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 86.02427298483148%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>ship</td>
+                    <td>0.8899</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 88.98555120171132%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>tennis-court</td>
+                    <td>0.9082</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 90.8243965225968%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>basketball-court</td>
+                    <td>0.8678</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 86.77679740918168%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>storage-tank</td>
+                    <td>0.8816</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 88.15966657909601%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>soccer-ball-field</td>
+                    <td>0.6798</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 67.98139178538928%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>roundabout</td>
+                    <td>0.7069</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 70.6884366345501%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>harbor</td>
+                    <td>0.7755</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 77.549494212562%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>swimming-pool</td>
+                    <td>0.8279</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 82.7922433753758%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>helicopter</td>
+                    <td>0.7542</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 75.42478163437418%"></div></div></td>
+                  </tr>
+
+              </tbody>
+            </table>
+          </div>
+        </td>
+      </tr>
+
+
+      <tr>
+        <td>5784</td>
+        <td>
+          <button class="toggle-btn" onclick="toggleDetail(11)">📋</button>
+        </td>
+        <td>23</td>
+        <td><span class="status-success">已完成</span></td>
+        <td>0.7976</td>
+        <td>0.7976</td>
+        <td>0.5177</td>
+        <td>0.4935</td>
+        <td>2026/8/8 23:19:18</td>
+        <td>2026/8/9 00:48:38</td>
+      </tr>
+
+      <tr class="class-ap-row">
+        <td colspan="10">
+          <div class="result-detail" id="detail-11" style="display: none;">
+            <h4>Epoch 23 各类别AP值</h4>
+            <table class="detail-table">
+              <thead>
+                <tr><th>类别</th><th>AP</th><th>可视化</th></tr>
+              </thead>
+              <tbody>
+
+                  <tr>
+                    <td>plane</td>
+                    <td>0.7710</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 77.1006717891956%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>baseball-diamond</td>
+                    <td>0.8531</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 85.30637975707822%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>bridge</td>
+                    <td>0.5922</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 59.22419372374349%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>ground-track-field</td>
+                    <td>0.7785</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 77.84685222919016%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>small-vehicle</td>
+                    <td>0.8143</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 81.42959096014395%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>large-vehicle</td>
+                    <td>0.8603</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 86.03410306928969%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>ship</td>
+                    <td>0.8894</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 88.94213058003959%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>tennis-court</td>
+                    <td>0.9082</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 90.82174892599059%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>basketball-court</td>
+                    <td>0.8694</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 86.93893731396233%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>storage-tank</td>
+                    <td>0.8811</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 88.11035333301331%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>soccer-ball-field</td>
+                    <td>0.6820</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 68.20070723422108%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>roundabout</td>
+                    <td>0.6929</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 69.28511190812789%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>harbor</td>
+                    <td>0.7771</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 77.71452115448163%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>swimming-pool</td>
+                    <td>0.8298</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 82.98095606973848%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>helicopter</td>
+                    <td>0.7643</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 76.42769964979402%"></div></div></td>
+                  </tr>
+
+              </tbody>
+            </table>
+          </div>
+        </td>
+      </tr>
+
+
+      <tr>
+        <td>5785</td>
+        <td>
+          <button class="toggle-btn" onclick="toggleDetail(12)">📋</button>
+        </td>
+        <td>25</td>
+        <td><span class="status-success">已完成</span></td>
+        <td>0.8029</td>
+        <td>0.8029</td>
+        <td>0.5263</td>
+        <td>0.5017</td>
+        <td>2026/8/8 23:19:26</td>
+        <td>2026/8/9 00:55:12</td>
+      </tr>
+
+      <tr class="class-ap-row">
+        <td colspan="10">
+          <div class="result-detail" id="detail-12" style="display: none;">
+            <h4>Epoch 25 各类别AP值</h4>
+            <table class="detail-table">
+              <thead>
+                <tr><th>类别</th><th>AP</th><th>可视化</th></tr>
+              </thead>
+              <tbody>
+
+                  <tr>
+                    <td>plane</td>
+                    <td>0.7985</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 79.85259579339163%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>baseball-diamond</td>
+                    <td>0.8705</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 87.05241377202209%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>bridge</td>
+                    <td>0.5773</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 57.734948171978765%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>ground-track-field</td>
+                    <td>0.7812</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 78.11771766077814%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>small-vehicle</td>
+                    <td>0.8172</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 81.7199318907767%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>large-vehicle</td>
+                    <td>0.8588</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 85.87645580112694%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>ship</td>
+                    <td>0.8900</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 89.00126379655761%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>tennis-court</td>
+                    <td>0.9079</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 90.79448920306032%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>basketball-court</td>
+                    <td>0.8721</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 87.20822404380458%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>storage-tank</td>
+                    <td>0.8794</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 87.94392244775068%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>soccer-ball-field</td>
+                    <td>0.6773</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 67.72786067848436%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>roundabout</td>
+                    <td>0.7074</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 70.7444880263096%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>harbor</td>
+                    <td>0.7766</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 77.66035641640549%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>swimming-pool</td>
+                    <td>0.8326</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 83.26481130151281%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>helicopter</td>
+                    <td>0.7970</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 79.70358838326803%"></div></div></td>
+                  </tr>
+
+              </tbody>
+            </table>
+          </div>
+        </td>
+      </tr>
+
+
+      <tr>
+        <td>5786</td>
+        <td>
+          <button class="toggle-btn" onclick="toggleDetail(13)">📋</button>
+        </td>
+        <td>27</td>
+        <td><span class="status-success">已完成</span></td>
+        <td>0.8055</td>
+        <td>0.8055</td>
+        <td>0.5407</td>
+        <td>0.5067</td>
+        <td>2026/8/8 23:19:36</td>
+        <td>2026/8/9 01:02:05</td>
+      </tr>
+
+      <tr class="class-ap-row">
+        <td colspan="10">
+          <div class="result-detail" id="detail-13" style="display: none;">
+            <h4>Epoch 27 各类别AP值</h4>
+            <table class="detail-table">
+              <thead>
+                <tr><th>类别</th><th>AP</th><th>可视化</th></tr>
+              </thead>
+              <tbody>
+
+                  <tr>
+                    <td>plane</td>
+                    <td>0.8187</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 81.8678599137436%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>baseball-diamond</td>
+                    <td>0.8722</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 87.21694197068271%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>bridge</td>
+                    <td>0.5798</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 57.98090696282942%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>ground-track-field</td>
+                    <td>0.7817</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 78.16618822202214%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>small-vehicle</td>
+                    <td>0.8178</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 81.77602699588927%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>large-vehicle</td>
+                    <td>0.8561</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 85.60513344962996%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>ship</td>
+                    <td>0.8895</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 88.95395081722117%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>tennis-court</td>
+                    <td>0.9081</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 90.80747672047416%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>basketball-court</td>
+                    <td>0.8725</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 87.24728936459134%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>storage-tank</td>
+                    <td>0.8801</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 88.01431692310143%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>soccer-ball-field</td>
+                    <td>0.6930</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 69.29958996041881%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>roundabout</td>
+                    <td>0.7264</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 72.6402462439733%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>harbor</td>
+                    <td>0.7777</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 77.77067252954441%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>swimming-pool</td>
+                    <td>0.8287</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 82.866502051182%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>helicopter</td>
+                    <td>0.7811</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 78.10614560398858%"></div></div></td>
+                  </tr>
+
+              </tbody>
+            </table>
+          </div>
+        </td>
+      </tr>
+
+
+      <tr>
+        <td>5787</td>
+        <td>
+          <button class="toggle-btn" onclick="toggleDetail(14)">📋</button>
+        </td>
+        <td>29</td>
+        <td><span class="status-success">已完成</span></td>
+        <td>0.8046</td>
+        <td>0.8046</td>
+        <td>0.5433</td>
+        <td>0.5071</td>
+        <td>2026/8/8 23:19:45</td>
+        <td>2026/8/9 02:13:32</td>
+      </tr>
+
+      <tr class="class-ap-row">
+        <td colspan="10">
+          <div class="result-detail" id="detail-14" style="display: none;">
+            <h4>Epoch 29 各类别AP值</h4>
+            <table class="detail-table">
+              <thead>
+                <tr><th>类别</th><th>AP</th><th>可视化</th></tr>
+              </thead>
+              <tbody>
+
+                  <tr>
+                    <td>plane</td>
+                    <td>0.8172</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 81.72131667881877%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>baseball-diamond</td>
+                    <td>0.8724</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 87.23750833885482%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>bridge</td>
+                    <td>0.5810</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 58.104095493220534%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>ground-track-field</td>
+                    <td>0.7798</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 77.9762244034189%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>small-vehicle</td>
+                    <td>0.8167</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 81.66509860907084%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>large-vehicle</td>
+                    <td>0.8550</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 85.49862702779993%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>ship</td>
+                    <td>0.8888</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 88.88271979208129%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>tennis-court</td>
+                    <td>0.9077</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 90.76846333795136%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>basketball-court</td>
+                    <td>0.8760</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 87.59724416494242%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>storage-tank</td>
+                    <td>0.8800</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 87.99796892899067%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>soccer-ball-field</td>
+                    <td>0.6730</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 67.29750078219712%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>roundabout</td>
+                    <td>0.7316</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 73.16192462951479%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>harbor</td>
+                    <td>0.7757</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 77.5725037081816%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>swimming-pool</td>
+                    <td>0.8277</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 82.77111911581433%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>helicopter</td>
+                    <td>0.7862</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 78.62026083017429%"></div></div></td>
+                  </tr>
+
+              </tbody>
+            </table>
+          </div>
+        </td>
+      </tr>
+
+
+      <tr>
+        <td>5788</td>
+        <td>
+          <button class="toggle-btn" onclick="toggleDetail(15)">📋</button>
+        </td>
+        <td>31</td>
+        <td><span class="status-success">已完成</span></td>
+        <td>0.8065</td>
+        <td>0.8065</td>
+        <td>0.5439</td>
+        <td>0.5075</td>
+        <td>2026/8/8 23:19:55</td>
+        <td>2026/8/9 01:26:16</td>
+      </tr>
+
+      <tr class="class-ap-row">
+        <td colspan="10">
+          <div class="result-detail" id="detail-15" style="display: none;">
+            <h4>Epoch 31 各类别AP值</h4>
+            <table class="detail-table">
+              <thead>
+                <tr><th>类别</th><th>AP</th><th>可视化</th></tr>
+              </thead>
+              <tbody>
+
+                  <tr>
+                    <td>plane</td>
+                    <td>0.8295</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 82.94548468372722%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>baseball-diamond</td>
+                    <td>0.8699</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 86.98992329710849%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>bridge</td>
+                    <td>0.5905</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 59.048420242911504%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>ground-track-field</td>
+                    <td>0.7800</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 78.00370973442188%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>small-vehicle</td>
+                    <td>0.8132</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 81.32362078713817%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>large-vehicle</td>
+                    <td>0.8534</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 85.33505415580152%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>ship</td>
+                    <td>0.8885</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 88.85317991310488%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>tennis-court</td>
+                    <td>0.9077</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 90.76588829264298%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>basketball-court</td>
+                    <td>0.8798</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 87.9828755901328%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>storage-tank</td>
+                    <td>0.8795</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 87.95380411717171%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>soccer-ball-field</td>
+                    <td>0.6756</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 67.56129663650637%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>roundabout</td>
+                    <td>0.7188</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 71.87529397201533%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>harbor</td>
+                    <td>0.7746</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 77.46031713895931%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>swimming-pool</td>
+                    <td>0.8225</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 82.2485446219854%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>helicopter</td>
+                    <td>0.8141</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 81.40516574198156%"></div></div></td>
+                  </tr>
+
+              </tbody>
+            </table>
+          </div>
+        </td>
+      </tr>
+
+
+      <tr>
+        <td>5789</td>
+        <td>
+          <button class="toggle-btn" onclick="toggleDetail(16)">📋</button>
+        </td>
+        <td>33</td>
+        <td><span class="status-success">已完成</span></td>
+        <td>0.8072</td>
+        <td>0.8072</td>
+        <td>0.5461</td>
+        <td>0.5086</td>
+        <td>2026/8/8 23:20:04</td>
+        <td>2026/8/9 01:35:14</td>
+      </tr>
+
+      <tr class="class-ap-row">
+        <td colspan="10">
+          <div class="result-detail" id="detail-16" style="display: none;">
+            <h4>Epoch 33 各类别AP值</h4>
+            <table class="detail-table">
+              <thead>
+                <tr><th>类别</th><th>AP</th><th>可视化</th></tr>
+              </thead>
+              <tbody>
+
+                  <tr>
+                    <td>plane</td>
+                    <td>0.8323</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 83.22833757197887%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>baseball-diamond</td>
+                    <td>0.8724</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 87.23548585986997%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>bridge</td>
+                    <td>0.5864</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 58.64122656230193%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>ground-track-field</td>
+                    <td>0.7810</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 78.103250652074%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>small-vehicle</td>
+                    <td>0.8130</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 81.30292247603073%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>large-vehicle</td>
+                    <td>0.8511</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 85.11038732773034%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>ship</td>
+                    <td>0.8876</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 88.76414476826206%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>tennis-court</td>
+                    <td>0.9072</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 90.72147088525362%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>basketball-court</td>
+                    <td>0.8808</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 88.08451088736857%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>storage-tank</td>
+                    <td>0.8808</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 88.08420213620309%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>soccer-ball-field</td>
+                    <td>0.6769</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 67.69054799615222%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>roundabout</td>
+                    <td>0.7175</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 71.74798798258367%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>harbor</td>
+                    <td>0.7752</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 77.51516647202847%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>swimming-pool</td>
+                    <td>0.8180</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 81.79637268095985%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>helicopter</td>
+                    <td>0.8272</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 82.72127401033164%"></div></div></td>
+                  </tr>
+
+              </tbody>
+            </table>
+          </div>
+        </td>
+      </tr>
+
+
+      <tr>
+        <td>5790</td>
+        <td>
+          <button class="toggle-btn" onclick="toggleDetail(17)">📋</button>
+        </td>
+        <td>35</td>
+        <td><span class="status-success">已完成</span></td>
+        <td>0.8052</td>
+        <td>0.8052</td>
+        <td>0.5472</td>
+        <td>0.5072</td>
+        <td>2026/8/8 23:20:14</td>
+        <td>2026/8/9 01:42:26</td>
+      </tr>
+
+      <tr class="class-ap-row">
+        <td colspan="10">
+          <div class="result-detail" id="detail-17" style="display: none;">
+            <h4>Epoch 35 各类别AP值</h4>
+            <table class="detail-table">
+              <thead>
+                <tr><th>类别</th><th>AP</th><th>可视化</th></tr>
+              </thead>
+              <tbody>
+
+                  <tr>
+                    <td>plane</td>
+                    <td>0.8264</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 82.64347483098507%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>baseball-diamond</td>
+                    <td>0.8742</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 87.42254429920179%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>bridge</td>
+                    <td>0.5778</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 57.78307289678898%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>ground-track-field</td>
+                    <td>0.7872</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 78.72318575149906%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>small-vehicle</td>
+                    <td>0.8092</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 80.92222711526584%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>large-vehicle</td>
+                    <td>0.8489</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 84.889830756735%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>ship</td>
+                    <td>0.8872</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 88.71985820400165%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>tennis-court</td>
+                    <td>0.9069</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 90.68628250439545%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>basketball-court</td>
+                    <td>0.8809</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 88.08807068426195%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>storage-tank</td>
+                    <td>0.8810</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 88.10278574742738%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>soccer-ball-field</td>
+                    <td>0.6730</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 67.30342349969045%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>roundabout</td>
+                    <td>0.7151</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 71.50507234155256%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>harbor</td>
+                    <td>0.7737</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 77.37189851451001%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>swimming-pool</td>
+                    <td>0.8165</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 81.64876116431532%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>helicopter</td>
+                    <td>0.8199</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 81.98787404707483%"></div></div></td>
+                  </tr>
+
+              </tbody>
+            </table>
+          </div>
+        </td>
+      </tr>
+
+
+      <tr>
+        <td>5791</td>
+        <td>
+          <button class="toggle-btn" onclick="toggleDetail(18)">📋</button>
+        </td>
+        <td>37</td>
+        <td><span class="status-success">已完成</span></td>
+        <td>0.8055</td>
+        <td>0.8055</td>
+        <td>0.5418</td>
+        <td>0.5071</td>
+        <td>2026/8/9 11:02:59</td>
+        <td>2026/8/9 11:10:51</td>
+      </tr>
+
+      <tr class="class-ap-row">
+        <td colspan="10">
+          <div class="result-detail" id="detail-18" style="display: none;">
+            <h4>Epoch 37 各类别AP值</h4>
+            <table class="detail-table">
+              <thead>
+                <tr><th>类别</th><th>AP</th><th>可视化</th></tr>
+              </thead>
+              <tbody>
+
+                  <tr>
+                    <td>plane</td>
+                    <td>0.8440</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 84.39522773514658%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>baseball-diamond</td>
+                    <td>0.8684</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 86.83687313477051%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>bridge</td>
+                    <td>0.5749</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 57.48694043735505%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>ground-track-field</td>
+                    <td>0.7862</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 78.61554298745202%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>small-vehicle</td>
+                    <td>0.8079</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 80.78792408688427%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>large-vehicle</td>
+                    <td>0.8475</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 84.75112788531591%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>ship</td>
+                    <td>0.8863</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 88.63035705728124%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>tennis-court</td>
+                    <td>0.9069</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 90.69475156276525%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>basketball-court</td>
+                    <td>0.8764</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 87.6444540074856%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>storage-tank</td>
+                    <td>0.8802</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 88.01923780276233%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>soccer-ball-field</td>
+                    <td>0.6735</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 67.35093669457481%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>roundabout</td>
+                    <td>0.7211</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 72.10942437166631%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>harbor</td>
+                    <td>0.7746</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 77.45756749535829%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>swimming-pool</td>
+                    <td>0.8129</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 81.29439038992147%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>helicopter</td>
+                    <td>0.8218</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 82.17629661280019%"></div></div></td>
+                  </tr>
+
+              </tbody>
+            </table>
+          </div>
+        </td>
+      </tr>
+
+
+      <tr>
+        <td>5792</td>
+        <td>
+          <button class="toggle-btn" onclick="toggleDetail(19)">📋</button>
+        </td>
+        <td>39</td>
+        <td><span class="status-success">已完成</span></td>
+        <td>0.8025</td>
+        <td>0.8025</td>
+        <td>0.5412</td>
+        <td>0.5037</td>
+        <td>2026/8/9 11:03:58</td>
+        <td>2026/8/9 11:17:57</td>
+      </tr>
+
+      <tr class="class-ap-row">
+        <td colspan="10">
+          <div class="result-detail" id="detail-19" style="display: none;">
+            <h4>Epoch 39 各类别AP值</h4>
+            <table class="detail-table">
+              <thead>
+                <tr><th>类别</th><th>AP</th><th>可视化</th></tr>
+              </thead>
+              <tbody>
+
+                  <tr>
+                    <td>plane</td>
+                    <td>0.8356</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 83.56173687826076%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>baseball-diamond</td>
+                    <td>0.8641</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 86.41367204223101%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>bridge</td>
+                    <td>0.5733</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 57.330637504759984%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>ground-track-field</td>
+                    <td>0.7880</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 78.79820233221703%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>small-vehicle</td>
+                    <td>0.8040</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 80.4006914820921%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>large-vehicle</td>
+                    <td>0.8429</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 84.2922984289311%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>ship</td>
+                    <td>0.8859</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 88.58606998988672%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>tennis-court</td>
+                    <td>0.9066</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 90.65993236126478%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>basketball-court</td>
+                    <td>0.8755</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 87.55073896708461%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>storage-tank</td>
+                    <td>0.8775</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 87.74813261923128%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>soccer-ball-field</td>
+                    <td>0.6604</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 66.03913903741415%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>roundabout</td>
+                    <td>0.7175</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 71.75083310694404%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>harbor</td>
+                    <td>0.7704</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 77.04310973935624%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>swimming-pool</td>
+                    <td>0.8069</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 80.69122283075852%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>helicopter</td>
+                    <td>0.8288</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 82.8833238015314%"></div></div></td>
+                  </tr>
+
+              </tbody>
+            </table>
+          </div>
+        </td>
+      </tr>
+
+
+      <tr>
+        <td>5793</td>
+        <td>
+          <button class="toggle-btn" onclick="toggleDetail(20)">📋</button>
+        </td>
+        <td>41</td>
+        <td><span class="status-success">已完成</span></td>
+        <td>0.8030</td>
+        <td>0.8030</td>
+        <td>0.5346</td>
+        <td>0.5015</td>
+        <td>2026/8/9 11:04:08</td>
+        <td>2026/8/9 11:25:05</td>
+      </tr>
+
+      <tr class="class-ap-row">
+        <td colspan="10">
+          <div class="result-detail" id="detail-20" style="display: none;">
+            <h4>Epoch 41 各类别AP值</h4>
+            <table class="detail-table">
+              <thead>
+                <tr><th>类别</th><th>AP</th><th>可视化</th></tr>
+              </thead>
+              <tbody>
+
+                  <tr>
+                    <td>plane</td>
+                    <td>0.8527</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 85.27433303053094%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>baseball-diamond</td>
+                    <td>0.8632</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 86.31811920507586%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>bridge</td>
+                    <td>0.5735</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 57.35460949547419%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>ground-track-field</td>
+                    <td>0.7768</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 77.68282038588531%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>small-vehicle</td>
+                    <td>0.8033</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 80.33245465284821%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>large-vehicle</td>
+                    <td>0.8430</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 84.30447350291314%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>ship</td>
+                    <td>0.8852</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 88.5181218149366%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>tennis-court</td>
+                    <td>0.9054</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 90.54488466409516%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>basketball-court</td>
+                    <td>0.8755</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 87.5469087557078%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>storage-tank</td>
+                    <td>0.8782</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 87.8191784661185%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>soccer-ball-field</td>
+                    <td>0.6565</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 65.64644494434373%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>roundabout</td>
+                    <td>0.7275</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 72.75133108943426%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>harbor</td>
+                    <td>0.7703</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 77.03316290545322%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>swimming-pool</td>
+                    <td>0.8087</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 80.87313565877656%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>helicopter</td>
+                    <td>0.8246</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 82.46459879953679%"></div></div></td>
+                  </tr>
+
+              </tbody>
+            </table>
+          </div>
+        </td>
+      </tr>
+
+
+      <tr>
+        <td>5794</td>
+        <td>
+          <button class="toggle-btn" onclick="toggleDetail(21)">📋</button>
+        </td>
+        <td>43</td>
+        <td><span class="status-success">已完成</span></td>
+        <td>0.8018</td>
+        <td>0.8018</td>
+        <td>0.5348</td>
+        <td>0.5019</td>
+        <td>2026/8/9 11:04:18</td>
+        <td>2026/8/9 11:32:37</td>
+      </tr>
+
+      <tr class="class-ap-row">
+        <td colspan="10">
+          <div class="result-detail" id="detail-21" style="display: none;">
+            <h4>Epoch 43 各类别AP值</h4>
+            <table class="detail-table">
+              <thead>
+                <tr><th>类别</th><th>AP</th><th>可视化</th></tr>
+              </thead>
+              <tbody>
+
+                  <tr>
+                    <td>plane</td>
+                    <td>0.8422</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 84.22393727607265%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>baseball-diamond</td>
+                    <td>0.8625</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 86.25081638358996%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>bridge</td>
+                    <td>0.5708</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 57.08495018915427%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>ground-track-field</td>
+                    <td>0.7777</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 77.76590955269167%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>small-vehicle</td>
+                    <td>0.8007</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 80.0665778541957%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>large-vehicle</td>
+                    <td>0.8423</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 84.23314601526616%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>ship</td>
+                    <td>0.8842</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 88.41746603883524%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>tennis-court</td>
+                    <td>0.9065</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 90.64910792899427%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>basketball-court</td>
+                    <td>0.8758</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 87.57779895066228%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>storage-tank</td>
+                    <td>0.8774</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 87.73966182779733%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>soccer-ball-field</td>
+                    <td>0.6443</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 64.42672621267327%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>roundabout</td>
+                    <td>0.7218</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 72.1843079204996%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>harbor</td>
+                    <td>0.7725</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 77.2462877337216%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>swimming-pool</td>
+                    <td>0.8098</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 80.97621119485878%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>helicopter</td>
+                    <td>0.8383</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 83.83345578792061%"></div></div></td>
+                  </tr>
+
+              </tbody>
+            </table>
+          </div>
+        </td>
+      </tr>
+
+
+      <tr>
+        <td>5795</td>
+        <td>
+          <button class="toggle-btn" onclick="toggleDetail(22)">📋</button>
+        </td>
+        <td>45</td>
+        <td><span class="status-success">已完成</span></td>
+        <td>0.8001</td>
+        <td>0.8001</td>
+        <td>0.5311</td>
+        <td>0.4989</td>
+        <td>2026/8/9 11:04:29</td>
+        <td>2026/8/9 11:39:57</td>
+      </tr>
+
+      <tr class="class-ap-row">
+        <td colspan="10">
+          <div class="result-detail" id="detail-22" style="display: none;">
+            <h4>Epoch 45 各类别AP值</h4>
+            <table class="detail-table">
+              <thead>
+                <tr><th>类别</th><th>AP</th><th>可视化</th></tr>
+              </thead>
+              <tbody>
+
+                  <tr>
+                    <td>plane</td>
+                    <td>0.8366</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 83.66379880154504%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>baseball-diamond</td>
+                    <td>0.8625</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 86.24711519820461%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>bridge</td>
+                    <td>0.5739</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 57.389900339470955%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>ground-track-field</td>
+                    <td>0.7741</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 77.4083385563974%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>small-vehicle</td>
+                    <td>0.7960</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 79.6037183392576%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>large-vehicle</td>
+                    <td>0.8419</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 84.1939021302889%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>ship</td>
+                    <td>0.8830</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 88.30226491905246%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>tennis-court</td>
+                    <td>0.9047</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 90.47264986537763%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>basketball-court</td>
+                    <td>0.8746</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 87.46293043904842%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>storage-tank</td>
+                    <td>0.8755</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 87.54866031826882%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>soccer-ball-field</td>
+                    <td>0.6428</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 64.27536011635937%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>roundabout</td>
+                    <td>0.7177</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 71.76823183282521%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>harbor</td>
+                    <td>0.7709</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 77.09368235444282%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>swimming-pool</td>
+                    <td>0.8115</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 81.14615662936156%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>helicopter</td>
+                    <td>0.8359</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 83.58571903059331%"></div></div></td>
+                  </tr>
+
+              </tbody>
+            </table>
+          </div>
+        </td>
+      </tr>
+
+
+      <tr>
+        <td>5796</td>
+        <td>
+          <button class="toggle-btn" onclick="toggleDetail(23)">📋</button>
+        </td>
+        <td>47</td>
+        <td><span class="status-success">已完成</span></td>
+        <td>0.7995</td>
+        <td>0.7995</td>
+        <td>0.5325</td>
+        <td>0.4974</td>
+        <td>2026/8/9 11:04:39</td>
+        <td>2026/8/9 11:47:32</td>
+      </tr>
+
+      <tr class="class-ap-row">
+        <td colspan="10">
+          <div class="result-detail" id="detail-23" style="display: none;">
+            <h4>Epoch 47 各类别AP值</h4>
+            <table class="detail-table">
+              <thead>
+                <tr><th>类别</th><th>AP</th><th>可视化</th></tr>
+              </thead>
+              <tbody>
+
+                  <tr>
+                    <td>plane</td>
+                    <td>0.8228</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 82.27855526253471%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>baseball-diamond</td>
+                    <td>0.8620</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 86.19687775081985%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>bridge</td>
+                    <td>0.5702</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 57.02245978447663%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>ground-track-field</td>
+                    <td>0.7835</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 78.34638562904568%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>small-vehicle</td>
+                    <td>0.7973</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 79.72538428938797%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>large-vehicle</td>
+                    <td>0.8407</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 84.06532686945695%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>ship</td>
+                    <td>0.8819</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 88.19151178723676%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>tennis-court</td>
+                    <td>0.9052</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 90.52353632474157%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>basketball-court</td>
+                    <td>0.8718</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 87.18127039473912%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>storage-tank</td>
+                    <td>0.8759</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 87.59134409119285%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>soccer-ball-field</td>
+                    <td>0.6484</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 64.84217847073884%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>roundabout</td>
+                    <td>0.7249</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 72.49179557927292%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>harbor</td>
+                    <td>0.7735</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 77.35446552523388%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>swimming-pool</td>
+                    <td>0.8096</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 80.9620624678766%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>helicopter</td>
+                    <td>0.8255</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 82.5462834373192%"></div></div></td>
+                  </tr>
+
+              </tbody>
+            </table>
+          </div>
+        </td>
+      </tr>
+
+
+      <tr>
+        <td>5797</td>
+        <td>
+          <button class="toggle-btn" onclick="toggleDetail(24)">📋</button>
+        </td>
+        <td>49</td>
+        <td><span class="status-success">已完成</span></td>
+        <td>0.7999</td>
+        <td>0.7999</td>
+        <td>0.5351</td>
+        <td>0.5001</td>
+        <td>2026/8/9 11:04:49</td>
+        <td>2026/8/9 11:54:57</td>
+      </tr>
+
+      <tr class="class-ap-row">
+        <td colspan="10">
+          <div class="result-detail" id="detail-24" style="display: none;">
+            <h4>Epoch 49 各类别AP值</h4>
+            <table class="detail-table">
+              <thead>
+                <tr><th>类别</th><th>AP</th><th>可视化</th></tr>
+              </thead>
+              <tbody>
+
+                  <tr>
+                    <td>plane</td>
+                    <td>0.8447</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 84.47354961057117%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>baseball-diamond</td>
+                    <td>0.8583</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 85.83241083746557%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>bridge</td>
+                    <td>0.5625</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 56.25201634629683%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>ground-track-field</td>
+                    <td>0.7827</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 78.2680296332799%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>small-vehicle</td>
+                    <td>0.7936</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 79.35814647295571%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>large-vehicle</td>
+                    <td>0.8397</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 83.97347441599759%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>ship</td>
+                    <td>0.8812</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 88.11659388129625%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>tennis-court</td>
+                    <td>0.9049</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 90.4891796779452%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>basketball-court</td>
+                    <td>0.8715</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 87.15375044857356%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>storage-tank</td>
+                    <td>0.8743</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 87.43174968554706%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>soccer-ball-field</td>
+                    <td>0.6568</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 65.68116292639233%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>roundabout</td>
+                    <td>0.7244</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 72.43983455580843%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>harbor</td>
+                    <td>0.7728</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 77.27692074546681%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>swimming-pool</td>
+                    <td>0.8094</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 80.93847869108308%"></div></div></td>
+                  </tr>
+
+                  <tr>
+                    <td>helicopter</td>
+                    <td>0.8223</td>
+                    <td><div class="ap-bar"><div class="ap-bar-fill" style="width: 82.22520089492568%"></div></div></td>
+                  </tr>
+
+              </tbody>
+            </table>
+          </div>
+        </td>
+      </tr>
+
+
+        </tbody>
+      </table>
+    </div>
+
+
+    <div class="card">
+      <h2>训练进度可视化</h2>
+      <h3>评估指标趋势</h3>
+      <div class="chart-row">
+        <div class="chart-container">
+          <h4>VOC mAP</h4>
+          <div id="vocMapChart" style="width: 100%; height: 300px;"></div>
+        </div>
+        <div class="chart-container">
+          <h4>COCO AP50</h4>
+          <div id="ap50Chart" style="width: 100%; height: 300px;"></div>
+        </div>
+      </div>
+      <div class="chart-row">
+        <div class="chart-container">
+          <h4>COCO AP75</h4>
+          <div id="ap75Chart" style="width: 100%; height: 300px;"></div>
+        </div>
+        <div class="chart-container">
+          <h4>COCO mAP</h4>
+          <div id="cocoMapChart" style="width: 100%; height: 300px;"></div>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+
+  <script>
+    const epochs = [1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49];
+    const vocMapData = [0.689055256269074,0.7191613276352786,0.7378924800531068,0.7478787918321498,0.7658142857241613,0.7710201810979463,0.7807648449544399,0.7908282482173293,0.7951280901876602,0.7954968719096018,0.7984367520731297,0.7975759717986735,0.8029353782581519,0.8055461651528616,0.8045817172273544,0.8065017192837394,0.807164858846086,0.8051989082384703,0.8055007015076932,0.8024998274146424,0.8029763849140868,0.8017842405779555,0.8001082859136628,0.7995462917760491,0.7999403325490703];
+    const ap50Data = [0.689055256269074,0.7191613276352786,0.7378924800531068,0.7478787918321498,0.7658142857241613,0.7710201810979463,0.7807648449544399,0.7908282482173293,0.7951280901876602,0.7954968719096018,0.7984367520731297,0.7975759717986735,0.8029353782581519,0.8055461651528616,0.8045817172273544,0.8065017192837394,0.807164858846086,0.8051989082384703,0.8055007015076932,0.8024998274146424,0.8029763849140868,0.8017842405779555,0.8001082859136628,0.7995462917760491,0.7999403325490703];
+    const ap75Data = [0.37122630152604824,0.41004499353482415,0.4328313648443183,0.4519203039354108,0.47563147960708374,0.48352905770732557,0.49643795010682035,0.5094540848991057,0.5035993125159366,0.5092643254915257,0.5148607708153118,0.5177369908880028,0.5262617669346692,0.5407328406737777,0.5432573805057413,0.5439195329137757,0.5460585238126171,0.5471957815395434,0.5418414151666908,0.5411542872378433,0.5345652382444179,0.5347759350680827,0.5311339984230271,0.532509486592918,0.5350581451814997];
+    const cocoMapData = [0.38096921745507883,0.4120260215820072,0.43139245619906363,0.44474727725077995,0.45936060639712195,0.46910313324488395,0.4777388509760989,0.4868505737609217,0.487189110478646,0.48759667543690777,0.4907847190103988,0.49345186930362556,0.5016765783734791,0.5066552951028619,0.5071009399959575,0.5074958992036543,0.5086001183246764,0.5072357988408376,0.5071159632024139,0.5037103627491274,0.5015416236384375,0.5018907844133416,0.49887984310429634,0.4973901160415643,0.5000799594194283];
+    const classApData = [[{"class":"plane","ap":0.750140428794843},{"class":"baseball-diamond","ap":0.734144032702652},{"class":"bridge","ap":0.4346616836492525},{"class":"ground-track-field","ap":0.5773761256692501},{"class":"small-vehicle","ap":0.7757023220097233},{"class":"large-vehicle","ap":0.8279158555719256},{"class":"ship","ap":0.8752534896118712},{"class":"tennis-court","ap":0.8971120417771532},{"class":"basketball-court","ap":0.7822764130019859},{"class":"storage-tank","ap":0.8611757740517336},{"class":"soccer-ball-field","ap":0.4579493444931494},{"class":"roundabout","ap":0.6110311132157524},{"class":"harbor","ap":0.5794092872406958},{"class":"swimming-pool","ap":0.6542742786745845},{"class":"helicopter","ap":0.5174066535715389}],[{"class":"plane","ap":0.7566198345404171},{"class":"baseball-diamond","ap":0.7462365088746933},{"class":"bridge","ap":0.4714914847977151},{"class":"ground-track-field","ap":0.5970282774120024},{"class":"small-vehicle","ap":0.7961298611844781},{"class":"large-vehicle","ap":0.8476136576943023},{"class":"ship","ap":0.8778640331227476},{"class":"tennis-court","ap":0.9011440272600804},{"class":"basketball-court","ap":0.8442705390340629},{"class":"storage-tank","ap":0.8709974198845502},{"class":"soccer-ball-field","ap":0.5978992615512292},{"class":"roundabout","ap":0.6047398689810406},{"class":"harbor","ap":0.6419685454948568},{"class":"swimming-pool","ap":0.6825257755290594},{"class":"helicopter","ap":0.5508908191679451}],[{"class":"plane","ap":0.764030077006905},{"class":"baseball-diamond","ap":0.8159294063883284},{"class":"bridge","ap":0.5142427964222449},{"class":"ground-track-field","ap":0.6330828702355707},{"class":"small-vehicle","ap":0.799578437476679},{"class":"large-vehicle","ap":0.8527941094529543},{"class":"ship","ap":0.88199495936155},{"class":"tennis-court","ap":0.9011700818136403},{"class":"basketball-court","ap":0.8469387729838359},{"class":"storage-tank","ap":0.8721982277222564},{"class":"soccer-ball-field","ap":0.6567043160439334},{"class":"roundabout","ap":0.6059648055533287},{"class":"harbor","ap":0.662566043958168},{"class":"swimming-pool","ap":0.7010504317728673},{"class":"helicopter","ap":0.5601418646043392}],[{"class":"plane","ap":0.7760933151705312},{"class":"baseball-diamond","ap":0.8414631073512229},{"class":"bridge","ap":0.5390027918312792},{"class":"ground-track-field","ap":0.6868302719394483},{"class":"small-vehicle","ap":0.7989876718543567},{"class":"large-vehicle","ap":0.8580320390790291},{"class":"ship","ap":0.8818194017564973},{"class":"tennis-court","ap":0.9042846479359993},{"class":"basketball-court","ap":0.8473292142026029},{"class":"storage-tank","ap":0.8754725757487278},{"class":"soccer-ball-field","ap":0.6686380072018369},{"class":"roundabout","ap":0.6096636511606027},{"class":"harbor","ap":0.7271760524201838},{"class":"swimming-pool","ap":0.7282696198948293},{"class":"helicopter","ap":0.47511950993509866}],[{"class":"plane","ap":0.7874105022795634},{"class":"baseball-diamond","ap":0.8604176719571398},{"class":"bridge","ap":0.5555946181157551},{"class":"ground-track-field","ap":0.7297739105450826},{"class":"small-vehicle","ap":0.8025137149904101},{"class":"large-vehicle","ap":0.8609219666843835},{"class":"ship","ap":0.8822688213582021},{"class":"tennis-court","ap":0.9071820246625941},{"class":"basketball-court","ap":0.854597200486986},{"class":"storage-tank","ap":0.8755659012086039},{"class":"soccer-ball-field","ap":0.6829750235492484},{"class":"roundabout","ap":0.6315319873389759},{"class":"harbor","ap":0.7462956889857256},{"class":"swimming-pool","ap":0.7836931620847319},{"class":"helicopter","ap":0.5264720916150154}],[{"class":"plane","ap":0.786432401688484},{"class":"baseball-diamond","ap":0.8662695279509505},{"class":"bridge","ap":0.5805899003061131},{"class":"ground-track-field","ap":0.728577805919604},{"class":"small-vehicle","ap":0.8058692404790428},{"class":"large-vehicle","ap":0.8605371256409603},{"class":"ship","ap":0.8820320489064134},{"class":"tennis-court","ap":0.9077173697736659},{"class":"basketball-court","ap":0.8472405353641295},{"class":"storage-tank","ap":0.8788013301593165},{"class":"soccer-ball-field","ap":0.6881800007371139},{"class":"roundabout","ap":0.6414943859828716},{"class":"harbor","ap":0.7574119300557051},{"class":"swimming-pool","ap":0.8070256783971284},{"class":"helicopter","ap":0.5271234351076969}],[{"class":"plane","ap":0.7989947136923939},{"class":"baseball-diamond","ap":0.864050831838212},{"class":"bridge","ap":0.5796548541007412},{"class":"ground-track-field","ap":0.749706750767437},{"class":"small-vehicle","ap":0.807271916245199},{"class":"large-vehicle","ap":0.8625366993902489},{"class":"ship","ap":0.8825660941520279},{"class":"tennis-court","ap":0.9078151382606399},{"class":"basketball-court","ap":0.8566495392430988},{"class":"storage-tank","ap":0.8773862300193234},{"class":"soccer-ball-field","ap":0.6589242059951065},{"class":"roundabout","ap":0.6502221945768543},{"class":"harbor","ap":0.7639154636821568},{"class":"swimming-pool","ap":0.8181348966025039},{"class":"helicopter","ap":0.633643145750655}],[{"class":"plane","ap":0.8040702815651011},{"class":"baseball-diamond","ap":0.8628567360580822},{"class":"bridge","ap":0.5817480024383076},{"class":"ground-track-field","ap":0.7639540765028755},{"class":"small-vehicle","ap":0.8058656247371111},{"class":"large-vehicle","ap":0.8628524459209443},{"class":"ship","ap":0.884676192354057},{"class":"tennis-court","ap":0.9078637381438835},{"class":"basketball-court","ap":0.8619949396724298},{"class":"storage-tank","ap":0.8796420410144905},{"class":"soccer-ball-field","ap":0.7129386486679771},{"class":"roundabout","ap":0.6522864868677388},{"class":"harbor","ap":0.7686542248777017},{"class":"swimming-pool","ap":0.8228192444235137},{"class":"helicopter","ap":0.690201040015726}],[{"class":"plane","ap":0.7909896032305584},{"class":"baseball-diamond","ap":0.8649233745983864},{"class":"bridge","ap":0.5887814212276747},{"class":"ground-track-field","ap":0.7637289793630391},{"class":"small-vehicle","ap":0.8098973272525946},{"class":"large-vehicle","ap":0.8613049688609906},{"class":"ship","ap":0.8876159940017239},{"class":"tennis-court","ap":0.907625978244344},{"class":"basketball-court","ap":0.8674334380117489},{"class":"storage-tank","ap":0.8797223385580766},{"class":"soccer-ball-field","ap":0.6844972785146669},{"class":"roundabout","ap":0.6954725906025002},{"class":"harbor","ap":0.7721649304992074},{"class":"swimming-pool","ap":0.8238145132485989},{"class":"helicopter","ap":0.7289486166007905}],[{"class":"plane","ap":0.7857901512524199},{"class":"baseball-diamond","ap":0.8661387204422237},{"class":"bridge","ap":0.5862963838408218},{"class":"ground-track-field","ap":0.7614297129797568},{"class":"small-vehicle","ap":0.81302699631303},{"class":"large-vehicle","ap":0.8612672282767806},{"class":"ship","ap":0.8889698164851668},{"class":"tennis-court","ap":0.9084096625467445},{"class":"basketball-court","ap":0.8712320652350604},{"class":"storage-tank","ap":0.8810139024221478},{"class":"soccer-ball-field","ap":0.6752932440494316},{"class":"roundabout","ap":0.6945075561531344},{"class":"harbor","ap":0.7751325629048831},{"class":"swimming-pool","ap":0.8286751642515728},{"class":"helicopter","ap":0.7352699114908552}],[{"class":"plane","ap":0.7849180310941534},{"class":"baseball-diamond","ap":0.8591278801665583},{"class":"bridge","ap":0.5954775287702935},{"class":"ground-track-field","ap":0.7705103819253827},{"class":"small-vehicle","ap":0.8144471357438718},{"class":"large-vehicle","ap":0.8602427298483148},{"class":"ship","ap":0.8898555120171132},{"class":"tennis-court","ap":0.9082439652259681},{"class":"basketball-court","ap":0.8677679740918168},{"class":"storage-tank","ap":0.8815966657909601},{"class":"soccer-ball-field","ap":0.6798139178538928},{"class":"roundabout","ap":0.706884366345501},{"class":"harbor","ap":0.77549494212562},{"class":"swimming-pool","ap":0.8279224337537581},{"class":"helicopter","ap":0.7542478163437418}],[{"class":"plane","ap":0.771006717891956},{"class":"baseball-diamond","ap":0.8530637975707822},{"class":"bridge","ap":0.5922419372374349},{"class":"ground-track-field","ap":0.7784685222919017},{"class":"small-vehicle","ap":0.8142959096014396},{"class":"large-vehicle","ap":0.8603410306928969},{"class":"ship","ap":0.8894213058003959},{"class":"tennis-court","ap":0.9082174892599059},{"class":"basketball-court","ap":0.8693893731396233},{"class":"storage-tank","ap":0.8811035333301331},{"class":"soccer-ball-field","ap":0.6820070723422109},{"class":"roundabout","ap":0.6928511190812789},{"class":"harbor","ap":0.7771452115448163},{"class":"swimming-pool","ap":0.8298095606973848},{"class":"helicopter","ap":0.7642769964979402}],[{"class":"plane","ap":0.7985259579339163},{"class":"baseball-diamond","ap":0.870524137720221},{"class":"bridge","ap":0.5773494817197876},{"class":"ground-track-field","ap":0.7811771766077814},{"class":"small-vehicle","ap":0.8171993189077671},{"class":"large-vehicle","ap":0.8587645580112694},{"class":"ship","ap":0.8900126379655761},{"class":"tennis-court","ap":0.9079448920306032},{"class":"basketball-court","ap":0.8720822404380457},{"class":"storage-tank","ap":0.8794392244775068},{"class":"soccer-ball-field","ap":0.6772786067848436},{"class":"roundabout","ap":0.7074448802630959},{"class":"harbor","ap":0.776603564164055},{"class":"swimming-pool","ap":0.8326481130151281},{"class":"helicopter","ap":0.7970358838326802}],[{"class":"plane","ap":0.818678599137436},{"class":"baseball-diamond","ap":0.872169419706827},{"class":"bridge","ap":0.5798090696282943},{"class":"ground-track-field","ap":0.7816618822202215},{"class":"small-vehicle","ap":0.8177602699588927},{"class":"large-vehicle","ap":0.8560513344962997},{"class":"ship","ap":0.8895395081722117},{"class":"tennis-court","ap":0.9080747672047416},{"class":"basketball-court","ap":0.8724728936459134},{"class":"storage-tank","ap":0.8801431692310143},{"class":"soccer-ball-field","ap":0.6929958996041882},{"class":"roundabout","ap":0.7264024624397329},{"class":"harbor","ap":0.7777067252954442},{"class":"swimming-pool","ap":0.82866502051182},{"class":"helicopter","ap":0.7810614560398857}],[{"class":"plane","ap":0.8172131667881877},{"class":"baseball-diamond","ap":0.8723750833885483},{"class":"bridge","ap":0.5810409549322053},{"class":"ground-track-field","ap":0.779762244034189},{"class":"small-vehicle","ap":0.8166509860907084},{"class":"large-vehicle","ap":0.8549862702779992},{"class":"ship","ap":0.8888271979208129},{"class":"tennis-court","ap":0.9076846333795137},{"class":"basketball-court","ap":0.8759724416494242},{"class":"storage-tank","ap":0.8799796892899068},{"class":"soccer-ball-field","ap":0.6729750078219712},{"class":"roundabout","ap":0.7316192462951479},{"class":"harbor","ap":0.7757250370818161},{"class":"swimming-pool","ap":0.8277111911581433},{"class":"helicopter","ap":0.7862026083017428}],[{"class":"plane","ap":0.8294548468372722},{"class":"baseball-diamond","ap":0.8698992329710848},{"class":"bridge","ap":0.590484202429115},{"class":"ground-track-field","ap":0.7800370973442188},{"class":"small-vehicle","ap":0.8132362078713817},{"class":"large-vehicle","ap":0.8533505415580152},{"class":"ship","ap":0.8885317991310488},{"class":"tennis-court","ap":0.9076588829264298},{"class":"basketball-court","ap":0.879828755901328},{"class":"storage-tank","ap":0.8795380411717171},{"class":"soccer-ball-field","ap":0.6756129663650637},{"class":"roundabout","ap":0.7187529397201533},{"class":"harbor","ap":0.7746031713895931},{"class":"swimming-pool","ap":0.8224854462198541},{"class":"helicopter","ap":0.8140516574198157}],[{"class":"plane","ap":0.8322833757197887},{"class":"baseball-diamond","ap":0.8723548585986997},{"class":"bridge","ap":0.5864122656230193},{"class":"ground-track-field","ap":0.78103250652074},{"class":"small-vehicle","ap":0.8130292247603074},{"class":"large-vehicle","ap":0.8511038732773034},{"class":"ship","ap":0.8876414476826205},{"class":"tennis-court","ap":0.9072147088525362},{"class":"basketball-court","ap":0.8808451088736857},{"class":"storage-tank","ap":0.8808420213620308},{"class":"soccer-ball-field","ap":0.6769054799615222},{"class":"roundabout","ap":0.7174798798258367},{"class":"harbor","ap":0.7751516647202847},{"class":"swimming-pool","ap":0.8179637268095985},{"class":"helicopter","ap":0.8272127401033164}],[{"class":"plane","ap":0.8264347483098508},{"class":"baseball-diamond","ap":0.8742254429920179},{"class":"bridge","ap":0.5778307289678898},{"class":"ground-track-field","ap":0.7872318575149906},{"class":"small-vehicle","ap":0.8092222711526584},{"class":"large-vehicle","ap":0.84889830756735},{"class":"ship","ap":0.8871985820400166},{"class":"tennis-court","ap":0.9068628250439545},{"class":"basketball-court","ap":0.8808807068426195},{"class":"storage-tank","ap":0.8810278574742738},{"class":"soccer-ball-field","ap":0.6730342349969045},{"class":"roundabout","ap":0.7150507234155256},{"class":"harbor","ap":0.7737189851451001},{"class":"swimming-pool","ap":0.8164876116431532},{"class":"helicopter","ap":0.8198787404707483}],[{"class":"plane","ap":0.8439522773514658},{"class":"baseball-diamond","ap":0.8683687313477052},{"class":"bridge","ap":0.5748694043735505},{"class":"ground-track-field","ap":0.7861554298745201},{"class":"small-vehicle","ap":0.8078792408688428},{"class":"large-vehicle","ap":0.8475112788531591},{"class":"ship","ap":0.8863035705728124},{"class":"tennis-court","ap":0.9069475156276525},{"class":"basketball-court","ap":0.8764445400748561},{"class":"storage-tank","ap":0.8801923780276233},{"class":"soccer-ball-field","ap":0.6735093669457481},{"class":"roundabout","ap":0.7210942437166631},{"class":"harbor","ap":0.7745756749535829},{"class":"swimming-pool","ap":0.8129439038992148},{"class":"helicopter","ap":0.8217629661280019}],[{"class":"plane","ap":0.8356173687826076},{"class":"baseball-diamond","ap":0.8641367204223102},{"class":"bridge","ap":0.5733063750475998},{"class":"ground-track-field","ap":0.7879820233221703},{"class":"small-vehicle","ap":0.804006914820921},{"class":"large-vehicle","ap":0.842922984289311},{"class":"ship","ap":0.8858606998988673},{"class":"tennis-court","ap":0.9065993236126478},{"class":"basketball-court","ap":0.8755073896708461},{"class":"storage-tank","ap":0.8774813261923128},{"class":"soccer-ball-field","ap":0.6603913903741415},{"class":"roundabout","ap":0.7175083310694405},{"class":"harbor","ap":0.7704310973935624},{"class":"swimming-pool","ap":0.8069122283075851},{"class":"helicopter","ap":0.828833238015314}],[{"class":"plane","ap":0.8527433303053094},{"class":"baseball-diamond","ap":0.8631811920507586},{"class":"bridge","ap":0.573546094954742},{"class":"ground-track-field","ap":0.7768282038588531},{"class":"small-vehicle","ap":0.8033245465284822},{"class":"large-vehicle","ap":0.8430447350291315},{"class":"ship","ap":0.8851812181493661},{"class":"tennis-court","ap":0.9054488466409517},{"class":"basketball-court","ap":0.875469087557078},{"class":"storage-tank","ap":0.8781917846611851},{"class":"soccer-ball-field","ap":0.6564644494434373},{"class":"roundabout","ap":0.7275133108943426},{"class":"harbor","ap":0.7703316290545322},{"class":"swimming-pool","ap":0.8087313565877656},{"class":"helicopter","ap":0.8246459879953678}],[{"class":"plane","ap":0.8422393727607265},{"class":"baseball-diamond","ap":0.8625081638358997},{"class":"bridge","ap":0.5708495018915427},{"class":"ground-track-field","ap":0.7776590955269167},{"class":"small-vehicle","ap":0.800665778541957},{"class":"large-vehicle","ap":0.8423314601526616},{"class":"ship","ap":0.8841746603883525},{"class":"tennis-court","ap":0.9064910792899427},{"class":"basketball-court","ap":0.8757779895066228},{"class":"storage-tank","ap":0.8773966182779733},{"class":"soccer-ball-field","ap":0.6442672621267328},{"class":"roundabout","ap":0.7218430792049961},{"class":"harbor","ap":0.7724628773372161},{"class":"swimming-pool","ap":0.8097621119485877},{"class":"helicopter","ap":0.8383345578792061}],[{"class":"plane","ap":0.8366379880154504},{"class":"baseball-diamond","ap":0.8624711519820462},{"class":"bridge","ap":0.5738990033947096},{"class":"ground-track-field","ap":0.7740833855639739},{"class":"small-vehicle","ap":0.7960371833925759},{"class":"large-vehicle","ap":0.841939021302889},{"class":"ship","ap":0.8830226491905246},{"class":"tennis-court","ap":0.9047264986537763},{"class":"basketball-court","ap":0.8746293043904843},{"class":"storage-tank","ap":0.8754866031826881},{"class":"soccer-ball-field","ap":0.6427536011635936},{"class":"roundabout","ap":0.717682318328252},{"class":"harbor","ap":0.7709368235444282},{"class":"swimming-pool","ap":0.8114615662936155},{"class":"helicopter","ap":0.8358571903059331}],[{"class":"plane","ap":0.822785552625347},{"class":"baseball-diamond","ap":0.8619687775081984},{"class":"bridge","ap":0.5702245978447663},{"class":"ground-track-field","ap":0.7834638562904569},{"class":"small-vehicle","ap":0.7972538428938798},{"class":"large-vehicle","ap":0.8406532686945696},{"class":"ship","ap":0.8819151178723676},{"class":"tennis-court","ap":0.9052353632474157},{"class":"basketball-court","ap":0.8718127039473912},{"class":"storage-tank","ap":0.8759134409119285},{"class":"soccer-ball-field","ap":0.6484217847073884},{"class":"roundabout","ap":0.7249179557927292},{"class":"harbor","ap":0.7735446552523388},{"class":"swimming-pool","ap":0.809620624678766},{"class":"helicopter","ap":0.825462834373192}],[{"class":"plane","ap":0.8447354961057116},{"class":"baseball-diamond","ap":0.8583241083746558},{"class":"bridge","ap":0.5625201634629683},{"class":"ground-track-field","ap":0.7826802963327989},{"class":"small-vehicle","ap":0.793581464729557},{"class":"large-vehicle","ap":0.8397347441599758},{"class":"ship","ap":0.8811659388129626},{"class":"tennis-court","ap":0.9048917967794521},{"class":"basketball-court","ap":0.8715375044857356},{"class":"storage-tank","ap":0.8743174968554706},{"class":"soccer-ball-field","ap":0.6568116292639233},{"class":"roundabout","ap":0.7243983455580842},{"class":"harbor","ap":0.772769207454668},{"class":"swimming-pool","ap":0.8093847869108308},{"class":"helicopter","ap":0.8222520089492568}]];
+
+    function createLineChart(chartId, title, xData, yData) {
+      const chart = echarts.init(document.getElementById(chartId));
+      const option = {
+        title: { text: title, left: 'center' },
+        tooltip: { trigger: 'axis' },
+        xAxis: { type: 'category', data: xData },
+        yAxis: { type: 'value' },
+        series: [{
+          data: yData,
+          type: 'line',
+          smooth: true,
+          areaStyle: { opacity: 0.3 }
+        }]
+      };
+      chart.setOption(option);
+      return chart;
+    }
+
+    function toggleDetail(idx) {
+      const detail = document.getElementById('detail-' + idx);
+      if (detail.style.display === 'none') {
+        detail.style.display = 'block';
+      } else {
+        detail.style.display = 'none';
+      }
+    }
+
+    window.addEventListener('load', function() {
+      if (document.getElementById('vocMapChart')) {
+        createLineChart('vocMapChart', 'VOC mAP', epochs, vocMapData);
+      }
+      if (document.getElementById('ap50Chart')) {
+        createLineChart('ap50Chart', 'COCO AP50', epochs, ap50Data);
+      }
+      if (document.getElementById('ap75Chart')) {
+        createLineChart('ap75Chart', 'COCO AP75', epochs, ap75Data);
+      }
+      if (document.getElementById('cocoMapChart')) {
+        createLineChart('cocoMapChart', 'COCO mAP', epochs, cocoMapData);
+      }
+    });
+
+    window.addEventListener('resize', function() {
+      const charts = document.querySelectorAll('[id^="vocMapChart"], [id^="ap50Chart"], [id^="ap75Chart"], [id^="cocoMapChart"], [id^="classChart"]');
+      charts.forEach(el => {
+        const chart = echarts.getInstanceByDom(el);
+        if (chart) chart.resize();
+      });
+    });
+  </script>
+</body>
+</html>
