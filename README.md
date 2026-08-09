@@ -90,6 +90,8 @@ We are excited to share that **RiO-DETRv2 is already under development** and wil
 
 🚀 Updates
 ---
+- [x] **\[2026.08.09\]** 🎉 RiO-DETR is selected as an oral(spotlight) presentation!
+
 - [x] **\[2026.07.31\]** We have released a clean implementation of the core **RT-DETR-OBB** framework, along with a selection of pretrained weights. More pretrained weights will be uploaded in the next few days.
 
 - [x] **\[2026.06.20\]** 🎉 RiO-DETR has been accepted to ECCV 2026!
