@@ -137,7 +137,7 @@ mAP below are reported for the same selected epoch.
 
 | Model | Epoch | AP50 | AP75 | COCO mAP | Params | Config | Logs | Checkpoint |
 | --- | ---: | ---: | ---: | ---: | ---: | --- | --- | --- |
-| RT-DETRv2-OBB-M | 43 | 80.15 | 54.62 | 50.94 | 19.06M | [yml](configs/rtdetrv2_obb/rtdetrv2_obb_hgnetv2_m_dota_1_ms.yml) | [train](training_logs/rtdetrv2_obb/dota_1_ms/train/rtdetrv2_obb_hgnetv2_m_dota_1_ms.md) · [eval](training_logs/rtdetrv2_obb/dota_1_ms/eval/rtdetrv2_obb_hgnetv2_m_dota_1_ms_eval.csv) | Not published |
+| RT-DETRv2-OBB-M | 43 | 80.15 | 54.62 | 50.94 | 19.06M | [yml](configs/rtdetrv2_obb/rtdetrv2_obb_hgnetv2_m_dota_1_ms.yml) | [train](training_logs/rtdetrv2_obb/dota_1_ms/train/rtdetrv2_obb_hgnetv2_m_dota_1_ms.md) · [eval](training_logs/rtdetrv2_obb/dota_1_ms/eval/rtdetrv2_obb_hgnetv2_m_dota_1_ms_eval.csv) | [ckpt](https://huggingface.co/RicePasteM/RT-DETR-OBB/resolve/main/dota_1_ms/rtdetrv2_obb_hgnetv2_m_dota_1_ms.pth) |
 | RT-DETRv2-OBB-X | 33 | 80.72 | 54.61 | 50.86 | 63.57M | [yml](configs/rtdetrv2_obb/rtdetrv2_obb_hgnetv2_x_dota_1_ms.yml) | [train](training_logs/rtdetrv2_obb/dota_1_ms/train/rtdetrv2_obb_hgnetv2_x_dota_1_ms.log) · [eval](training_logs/rtdetrv2_obb/dota_1_ms/eval/rtdetrv2_obb_hgnetv2_x_dota_1_ms_eval.html) | [ckpt](https://huggingface.co/RicePasteM/RT-DETR-OBB/resolve/main/dota_1_ms/rtdetrv2_obb_hgnetv2_x_dota_1_ms.pth) |
 
 Release metadata: [manifest](model_zoo/rtdetrv2_obb/dota_1_ms/manifest.json) · [metrics](model_zoo/rtdetrv2_obb/dota_1_ms/metrics.csv).
