@@ -19,7 +19,7 @@ pretrained_ckpts/
     ├── dota_1_ss/
     │   └── rtdetrv2_obb_hgnetv2_{n,s,m,l,x}_dota_1_ss.pth
     └── dota_1_ms/
-        └── rtdetrv2_obb_hgnetv2_x_dota_1_ms.pth
+        └── rtdetrv2_obb_hgnetv2_{m,x}_dota_1_ms.pth
 ```
 
 The presence of a file in this local cache is not evidence that it is part of
