@@ -8,10 +8,10 @@ training_logs/rtdetrv2_obb/
 │   └── metrics/   # compact per-epoch JSONL metric histories
 ├── dota_1_ss/
 │   ├── train/     # sanitized console training logs
-│   └── eval/      # exported DOTA evaluation HTML reports
+│   └── eval/      # DOTA evaluation CSV metric tables
 └── dota_1_ms/
     ├── train/     # sanitized console training logs
-    └── eval/      # exported DOTA evaluation reports and metric tables
+    └── eval/      # DOTA evaluation CSV metric tables
 ```
 
 Published logs must not contain API keys, access tokens, user names, host names,
@@ -20,3 +20,8 @@ release metadata belong in `pretrained_ckpts/` and `model_zoo/`, respectively.
 
 Historical logs from the original RiO-DETR experiments remain separately
 namespaced under `training_logs/original_rio_detr/`.
+
+DOTA evaluation CSV files share one schema: task metadata (`epoch`, result ID,
+status, and timestamps), aggregate metrics (VOC mAP, AP50, AP75, and COCO mAP),
+and the AP for each of the 15 DOTA classes. Submission attempts without a
+completed evaluation are retained with empty metric fields.

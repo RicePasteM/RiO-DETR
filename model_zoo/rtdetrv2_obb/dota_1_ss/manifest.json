@@ -29,7 +29,7 @@
       "local_cache_path": "pretrained_ckpts/rtdetrv2_obb/dota_1_ss/rtdetrv2_obb_hgnetv2_n_dota_1_ss.pth",
       "download_url": "https://huggingface.co/RicePasteM/RT-DETR-OBB/resolve/main/dota_1_ss/rtdetrv2_obb_hgnetv2_n_dota_1_ss.pth",
       "train_log": "training_logs/rtdetrv2_obb/dota_1_ss/train/rtdetrv2_obb_hgnetv2_n_dota_1_ss.log",
-      "eval_report": "training_logs/rtdetrv2_obb/dota_1_ss/eval/rtdetrv2_obb_hgnetv2_n_dota_1_ss_eval.html"
+      "eval_report": "training_logs/rtdetrv2_obb/dota_1_ss/eval/rtdetrv2_obb_hgnetv2_n_dota_1_ss_eval.csv"
     },
     {
       "variant": "S",
@@ -49,7 +49,7 @@
       "local_cache_path": "pretrained_ckpts/rtdetrv2_obb/dota_1_ss/rtdetrv2_obb_hgnetv2_s_dota_1_ss.pth",
       "download_url": "https://huggingface.co/RicePasteM/RT-DETR-OBB/resolve/main/dota_1_ss/rtdetrv2_obb_hgnetv2_s_dota_1_ss.pth",
       "train_log": "training_logs/rtdetrv2_obb/dota_1_ss/train/rtdetrv2_obb_hgnetv2_s_dota_1_ss.log",
-      "eval_report": "training_logs/rtdetrv2_obb/dota_1_ss/eval/rtdetrv2_obb_hgnetv2_s_dota_1_ss_eval.html"
+      "eval_report": "training_logs/rtdetrv2_obb/dota_1_ss/eval/rtdetrv2_obb_hgnetv2_s_dota_1_ss_eval.csv"
     },
     {
       "variant": "M",
@@ -69,7 +69,7 @@
       "local_cache_path": "pretrained_ckpts/rtdetrv2_obb/dota_1_ss/rtdetrv2_obb_hgnetv2_m_dota_1_ss.pth",
       "download_url": "https://huggingface.co/RicePasteM/RT-DETR-OBB/resolve/main/dota_1_ss/rtdetrv2_obb_hgnetv2_m_dota_1_ss.pth",
       "train_log": "training_logs/rtdetrv2_obb/dota_1_ss/train/rtdetrv2_obb_hgnetv2_m_dota_1_ss.log",
-      "eval_report": "training_logs/rtdetrv2_obb/dota_1_ss/eval/rtdetrv2_obb_hgnetv2_m_dota_1_ss_eval.html"
+      "eval_report": "training_logs/rtdetrv2_obb/dota_1_ss/eval/rtdetrv2_obb_hgnetv2_m_dota_1_ss_eval.csv"
     },
     {
       "variant": "L",
@@ -89,7 +89,7 @@
       "local_cache_path": "pretrained_ckpts/rtdetrv2_obb/dota_1_ss/rtdetrv2_obb_hgnetv2_l_dota_1_ss.pth",
       "download_url": "https://huggingface.co/RicePasteM/RT-DETR-OBB/resolve/main/dota_1_ss/rtdetrv2_obb_hgnetv2_l_dota_1_ss.pth",
       "train_log": "training_logs/rtdetrv2_obb/dota_1_ss/train/rtdetrv2_obb_hgnetv2_l_dota_1_ss.log",
-      "eval_report": "training_logs/rtdetrv2_obb/dota_1_ss/eval/rtdetrv2_obb_hgnetv2_l_dota_1_ss_eval.html"
+      "eval_report": "training_logs/rtdetrv2_obb/dota_1_ss/eval/rtdetrv2_obb_hgnetv2_l_dota_1_ss_eval.csv"
     },
     {
       "variant": "X",
@@ -109,7 +109,7 @@
       "local_cache_path": "pretrained_ckpts/rtdetrv2_obb/dota_1_ss/rtdetrv2_obb_hgnetv2_x_dota_1_ss.pth",
       "download_url": "https://huggingface.co/RicePasteM/RT-DETR-OBB/resolve/main/dota_1_ss/rtdetrv2_obb_hgnetv2_x_dota_1_ss.pth",
       "train_log": "training_logs/rtdetrv2_obb/dota_1_ss/train/rtdetrv2_obb_hgnetv2_x_dota_1_ss.log",
-      "eval_report": "training_logs/rtdetrv2_obb/dota_1_ss/eval/rtdetrv2_obb_hgnetv2_x_dota_1_ss_eval.html"
+      "eval_report": "training_logs/rtdetrv2_obb/dota_1_ss/eval/rtdetrv2_obb_hgnetv2_x_dota_1_ss_eval.csv"
     }
   ]
 }
