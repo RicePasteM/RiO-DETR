@@ -1,0 +1,4 @@
+# Experiment artifacts and published metrics are data, not source code.
+training_logs/** linguist-detectable=false
+model_zoo/** linguist-detectable=false
+pretrained_ckpts/** linguist-detectable=false
