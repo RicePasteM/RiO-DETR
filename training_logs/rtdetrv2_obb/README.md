@@ -11,7 +11,7 @@ training_logs/rtdetrv2_obb/
 │   └── eval/      # exported DOTA evaluation HTML reports
 └── dota_1_ms/
     ├── train/     # sanitized console training logs
-    └── eval/      # exported DOTA evaluation HTML reports
+    └── eval/      # exported DOTA evaluation reports and metric tables
 ```
 
 Published logs must not contain API keys, access tokens, user names, host names,

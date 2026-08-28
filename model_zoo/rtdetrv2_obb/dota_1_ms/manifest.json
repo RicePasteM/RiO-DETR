@@ -8,9 +8,28 @@
     "model": "EMA state_dict"
   },
   "selection_rule": "highest completed VOC mAP (AP50) among submitted odd epochs",
-  "evaluation_exported_at": "2026-08-09",
+  "evaluation_exported_at": "2026-08-24",
   "metrics_table": "model_zoo/rtdetrv2_obb/dota_1_ms/metrics.csv",
   "models": [
+    {
+      "variant": "M",
+      "best_metric_epoch": 43,
+      "best_voc_mAP": 0.801512085581118,
+      "ap50": 0.801512085581118,
+      "ap75": 0.5461902417147235,
+      "coco_mAP": 0.5093775720896196,
+      "parameters": 19064114,
+      "state_dict_tensors": 810,
+      "size_bytes": 77127788,
+      "sha256": "a01e166b85ad6b7a19390c26c6a1773350ae483c1d7ec7379f9658752b6d5b21",
+      "evaluation_task_id": 519,
+      "config": "configs/rtdetrv2_obb/rtdetrv2_obb_hgnetv2_m_dota_1_ms.yml",
+      "source_checkpoint": "checkpoint0043.pth",
+      "file": "rtdetrv2_obb_hgnetv2_m_dota_1_ms.pth",
+      "local_cache_path": "pretrained_ckpts/rtdetrv2_obb/dota_1_ms/rtdetrv2_obb_hgnetv2_m_dota_1_ms.pth",
+      "train_log": "training_logs/rtdetrv2_obb/dota_1_ms/train/rtdetrv2_obb_hgnetv2_m_dota_1_ms.md",
+      "eval_report": "training_logs/rtdetrv2_obb/dota_1_ms/eval/rtdetrv2_obb_hgnetv2_m_dota_1_ms_eval.csv"
+    },
     {
       "variant": "X",
       "best_metric_epoch": 33,
