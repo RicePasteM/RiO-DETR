@@ -49,7 +49,7 @@
       "local_cache_path": "pretrained_ckpts/rtdetrv2_obb/dota_1_ms/rtdetrv2_obb_hgnetv2_x_dota_1_ms.pth",
       "download_url": "https://huggingface.co/RicePasteM/RT-DETR-OBB/resolve/main/dota_1_ms/rtdetrv2_obb_hgnetv2_x_dota_1_ms.pth",
       "train_log": "training_logs/rtdetrv2_obb/dota_1_ms/train/rtdetrv2_obb_hgnetv2_x_dota_1_ms.log",
-      "eval_report": "training_logs/rtdetrv2_obb/dota_1_ms/eval/rtdetrv2_obb_hgnetv2_x_dota_1_ms_eval.html"
+      "eval_report": "training_logs/rtdetrv2_obb/dota_1_ms/eval/rtdetrv2_obb_hgnetv2_x_dota_1_ms_eval.csv"
     }
   ]
 }
