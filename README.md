@@ -60,36 +60,32 @@
 <strong>If you like our work, please give us a ⭐!</strong>
 </p>
 
+<p align="center">
+<strong>🎉 We’re excited to share <a href="https://github.com/RicePasteM/RiO-DETRv2">RiO-DETRv2</a> 🎉</strong>
+</p>
+
 <img width="1820" height="470" alt="screenshot-20260327-181717" src="https://github.com/user-attachments/assets/1ab0da78-748f-4f85-81e8-f124160eedae" />
 
 
-📢 A Note on the Release of RiO-DETR
----
-Unfortunately, I am currently unable to release the complete research code.
+## A Note on the Release of RiO-DETR
 
-I have always hoped to make the full implementation of RiO-DETR publicly available, and I began preparing the codebase for an open-source release at an early stage. However, due to **intellectual property restrictions involving one of the collaborating institutions**, I was not granted permission to release the parts of the codebase containing the specific technical improvements introduced in the paper.
+Due to intellectual property restrictions on the original paper-specific components, this repository provides the open RT-DETR-OBB framework, together with pretrained weights and training/evaluation logs.
 
-This restriction does not reflect any change in my personal commitment to open research and reproducibility. I sincerely appreciate your understanding.
+### RiO-DETRv2 Is Now Available
 
-### What Will Be Released
+**[RiO-DETRv2](https://github.com/RicePasteM/RiO-DETRv2) is now officially released!**
 
-I will release a clean implementation of the core framework built upon RT-DETRv2. This release will include:
+Building on the RiO-DETR research direction, RiO-DETRv2 introduces distributional boundary refinement, coarse-to-fine orientation refinement, and boundary-and-angle-aware confidence estimation. RiO-DETRv2-X achieves **54.13% mAP50-95 and 59.44% AP75 on the DOTA-v1.0 test set**, surpassing RiO-DETR on high-precision oriented object detetion.
 
-- A baseline RT-DETR-OBB model;
+The release includes the full model implementation, five model scales (N/S/M/L/X), pretrained checkpoints, training logs, and evaluation records for DOTA-v1.0, DIOR-R, and AI-TOD-R.
 
-- A code architecture and supporting infrastructure that I have independently reorganized and optimized;
-
-- Pretrained weights, which will be uploaded progressively.
-
-However, please note that this version will not include the paper-specific technical improvements affected by the intellectual property restrictions. As a result, there remains a performance gap between this foundational release and the full RiO-DETR implementation. I hope this foundational release can still provide the community with a useful starting point. I also warmly welcome the community to build upon this framework, independently reproduce the missing components, and share open implementations.
-
-### Good News: RiO-DETRv2 Is on the Way
-
-We are excited to share that **RiO-DETRv2 is already under development** and will be published soon. This new version includes reworked architectural improvements and optimizations for bounding-box localization, and it will not be subject to the intellectual property restrictions mentioned above. Please stay tuned. 🔥
+**For new experiments and applications, we recommend starting with RiO-DETRv2.**
 
 
 🚀 Updates
 ---
+- [x] **[2026.10.23]** 🎉 **RiO-DETRv2 is officially released!** Code, pretrained models, training logs, and evaluation records are available in the [new repository](https://github.com/RicePasteM/RiO-DETRv2).
+
 - [x] **\[2026.08.09\]** 🎉 RiO-DETR is selected as an oral(spotlight) presentation!
 
 - [x] **\[2026.07.31\]** We have released a clean implementation of the core **RT-DETR-OBB** framework, along with a selection of pretrained weights. More pretrained weights will be uploaded in the next few days.
