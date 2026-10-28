@@ -64,7 +64,8 @@
 <strong>🎉 We’re excited to share <a href="https://github.com/RicePasteM/RiO-DETRv2">RiO-DETRv2</a> 🎉</strong>
 </p>
 
-<img width="1820" height="470" alt="screenshot-20260327-181717" src="https://github.com/user-attachments/assets/1ab0da78-748f-4f85-81e8-f124160eedae" />
+<img width="1820" height="470" alt="image" src="https://github.com/user-attachments/assets/ff1d0d9e-241b-4518-ac1d-419c56c53def" />
+
 
 
 ## A Note on the Release of RiO-DETR
